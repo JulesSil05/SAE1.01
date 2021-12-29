@@ -2,17 +2,14 @@
  * Ecran de démarrage
  * deplacement + texture personnage
  * load de map
-
+ * 
 =========================*/
 
 using Microsoft.Xna.Framework;
-
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
-using MonoGame.Extended.Content;
-using MonoGame.Extended.Serialization;
-using MonoGame.Extended.Sprites;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace TerraPolis
 {
@@ -31,9 +28,10 @@ namespace TerraPolis
         private Texture2D _textureExitButton; //--jules--Definition texture du bouton de sortie
         private Vector2 _positionExitButton; //--jules--Definition position du bouton de sortie
 
-        private MouseState _mouseState;
+        private SoundEffect _backMusic; //--jules--Définition de la musique de fond pour le menu
+        private Song _clickButton; //--jules--Définition du son pour le clique sur un boutton du menu
 
-
+        private MouseState _mouseState; //--jules--Définition etat de la souris
         //--jules--=============================
 
         public Game1()
@@ -45,9 +43,8 @@ namespace TerraPolis
 
         protected override void Initialize()
         {
-            _graphics.PreferredBackBufferWidth = 776;
-            _graphics.ApplyChanges();
-
+            _graphics.PreferredBackBufferWidth = 776; //--jules--Definition de la largeur de l'écran
+            _graphics.ApplyChanges(); //--jules--Application des changements de taille
             _positionBackground = new Vector2(0, 0); //--jules--Position du fond
             _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth / 2 - 217, 100); //--jules--Position du logo
             _positionStartButton = new Vector2(_graphics.PreferredBackBufferWidth / 4 - 63, 300); //--jules--Position du bouton de démarrage
@@ -61,6 +58,9 @@ namespace TerraPolis
             _textureLogo = Content.Load<Texture2D>("logo"); //--jules--Chargement texture du logo
             _textureStartButton = Content.Load<Texture2D>("start_button"); //--jules--Chargement texture du bouton de démarrage
             _textureExitButton = Content.Load<Texture2D>("exit_button"); //--jules--Chargement texture du bouton de sortie
+            _backMusic = Content.Load<SoundEffect>("back_music"); //--jules--Chargement du fichier audio de la musique de fond du menu
+            _clickButton = Content.Load<Song>("click_button"); //--jules--Chargement du fichier audio de la musique de fond du menu
+            _backMusic.Play(); //--jules--Démarrage de la musique de fond
             _spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
@@ -81,10 +81,20 @@ namespace TerraPolis
 
             if (_mouseState.LeftButton == ButtonState.Pressed)
             {
+                //--jules--
+                //====================================
+                //RAJOUTER LE BOUTTON PARAMETRES
+                //====================================
+
                 if (rBouton.Contains(_mouseState.Position)) //--jules--config bouton play
                 {
+                    MediaPlayer.Play(_clickButton);
+                    //--jules--
+                    //====================================
+                    //CINEMATIQUE DE LANCEMENT DE LA PARTIE
+                    //====================================
 
-
+                    //Lancement de la partie
                 }
 
                 else if (rBoutonQuitter.Contains(_mouseState.Position)) //--jules--config bouton quitter
@@ -92,7 +102,6 @@ namespace TerraPolis
                     Exit();
                 }
             }
-
             base.Update(gameTime);
         }
 

@@ -28,3 +28,6 @@ C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\obj\Debug\netcoreapp3.1
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\obj\Debug\netcoreapp3.1\TerraPolis.dll
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\obj\Debug\netcoreapp3.1\TerraPolis.pdb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\obj\Debug\netcoreapp3.1\TerraPolis.genruntimeconfig.cache
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\back_music.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\click_button.ogg
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\click_button.xnb
