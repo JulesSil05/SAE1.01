@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/background_menu.png","C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/background_menu.xnb","TextureProcessor","Texture2DContent",672889,4710485,0,6139546
+"C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/exit_button.png","C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/exit_button.xnb","TextureProcessor","Texture2DContent",3636,28113,0,0088353
+"C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/logo.png","C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/logo.xnb","TextureProcessor","Texture2DContent",12692,153205,0,0089917
+"C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/start_button.png","C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/start_button.xnb","TextureProcessor","Texture2DContent",3128,24781,0,0077345
