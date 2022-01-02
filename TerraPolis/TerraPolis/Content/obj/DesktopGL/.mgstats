@@ -1,2 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/click_button.mp3","C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/click_button.xnb","SongProcessor","SongContent",2138,130,1,1796885
+"C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/case.png","C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/case.xnb","TextureProcessor","Texture2DContent",9857,1685,0,1973209
+"C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/case_coche.png","C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/case_coche.xnb","TextureProcessor","Texture2DContent",14785,1685,0,0047342
+"C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/setting_button.png","C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/setting_button.xnb","TextureProcessor","Texture2DContent",8051,10085,0,0037368

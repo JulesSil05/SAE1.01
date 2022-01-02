@@ -31,3 +31,13 @@ C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\obj\Debug\netcoreapp3.1
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\back_music.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\click_button.ogg
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\click_button.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\back_music.ogg
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\back_wood.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\setting_button.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\close.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\back_onglet_menu.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\No.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\yes.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\back_onglet_parametre.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\case.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\case_coche.xnb

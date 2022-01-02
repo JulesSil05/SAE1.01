@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/exit_button.png</SourceFile>
-  <SourceTime>2021-12-26T13:59:49.7383152+01:00</SourceTime>
+  <SourceTime>2021-12-30T11:49:27.4598806+01:00</SourceTime>
   <DestFile>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/Content/exit_button.xnb</DestFile>
-  <DestTime>2021-12-29T13:37:00.6722456+01:00</DestTime>
+  <DestTime>2021-12-30T11:50:33.6053122+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T18:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
