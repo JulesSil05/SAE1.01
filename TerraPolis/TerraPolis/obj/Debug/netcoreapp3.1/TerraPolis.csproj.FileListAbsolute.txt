@@ -39,5 +39,3 @@ C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\No.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\yes.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\back_onglet_parametre.xnb
-C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\case.xnb
-C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\case_coche.xnb

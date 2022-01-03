@@ -63,8 +63,8 @@ namespace TerraPolis
             _graphics.PreferredBackBufferHeight = _graphics.PreferredBackBufferHeight * 2; //--jules--Definition de la hauteur de l'écran
             _graphics.ApplyChanges(); //--jules--Application des changements de taille
             _positionBackground = new Vector2(0, 0); //--jules--Position du fond
-            _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1220, 200); //--jules--Position du logo
-            _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1270), 600); //--jules--Position du bouton de démarrage
+            _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo
+            _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
             _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
             _positionOngletMenu = new Vector2(10000, 10000); //--jules--Position onglet menu
             _positionSettingButton = new Vector2(_graphics.PreferredBackBufferWidth - 100, _graphics.PreferredBackBufferHeight - 100); //--jules--Position du bouton paramètres
@@ -108,7 +108,7 @@ namespace TerraPolis
 
             Rectangle rBouton = new Rectangle((int)_positionStartButton.X, (int)_positionStartButton.Y, _textureStartButton.Width, _textureStartButton.Height); //--jules--HitBox bouton play
             Rectangle rBoutonQuitter = new Rectangle((int)_positionExitButton.X, (int)_positionExitButton.Y, _textureExitButton.Width, _textureExitButton.Height); //--jules--HitBox bouton quitter
-            Rectangle rBoutonParametre= new Rectangle((int)_positionSettingButton.X, (int)_positionSettingButton.Y, _textureSettingButton.Width, _textureSettingButton.Height); //--jules--HitBox bouton quitter
+            Rectangle rBoutonParametre = new Rectangle((int)_positionSettingButton.X, (int)_positionSettingButton.Y, _textureSettingButton.Width, _textureSettingButton.Height); //--jules--HitBox bouton quitter
 
             if (_mouseState.LeftButton == ButtonState.Pressed)
             {
@@ -116,7 +116,7 @@ namespace TerraPolis
                 {
                     //Affichage du menu
                     _clickButton.Play();
-                    _positionOngletMenu = new Vector2(_graphics.PreferredBackBufferWidth/2 - 537, _graphics.PreferredBackBufferHeight/2 - 330); //--jules--Position onglet menu
+                    _positionOngletMenu = new Vector2(_graphics.PreferredBackBufferWidth / 2 - 537, _graphics.PreferredBackBufferHeight / 2 - 330); //--jules--Position onglet menu
                     _positionCloseButton = new Vector2(1200, 200); //--jules--Position du bouton fermer
                     _positionStartButton = new Vector2(10000, 10000); //--jules--Position du bouton de démarrage
                     _positionExitButton = new Vector2(10000, 10000); //--jules--Position du bouton de sortie
@@ -130,7 +130,7 @@ namespace TerraPolis
                     _clickButton.Play();
                     _positionOngletMenu = new Vector2(10000, 10000); //--jules--Position onglet menu
                     _positionCloseButton = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-                    _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1270), 600); //--jules--Position du bouton de démarrage
+                    _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
                     _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
                     _positionSettingButton = new Vector2(_graphics.PreferredBackBufferWidth - 100, _graphics.PreferredBackBufferHeight - 100); //--jules--Position du bouton paramètres
                 }
@@ -142,7 +142,6 @@ namespace TerraPolis
                     //====================================
                     //CINEMATIQUE DE LANCEMENT DE LA PARTIE
                     //====================================
-
                     //Lancement de la partie
                 }
 
@@ -152,12 +151,12 @@ namespace TerraPolis
                     _clickButton.Play();
                     _positionOngletMenuQuitter = new Vector2((_graphics.PreferredBackBufferWidth / 2) - 268, (_graphics.PreferredBackBufferHeight / 2) - 165); //--jules--Position du menu quitter
                     _positionOui = new Vector2(600, 540); //--jules--Position du menu quitter
-                    _positionNon = new Vector2(840,540); //--jules--Position du menu quitter
+                    _positionNon = new Vector2(840, 540); //--jules--Position du menu quitter
                     _positionStartButton = new Vector2(10000, 10000); //--jules--Position du bouton de démarrage
                     _positionExitButton = new Vector2(10000, 10000); //--jules--Position du bouton de sortie
                     _positionLogo = new Vector2(10000, 10000); //--jules--Position du logo
                     _positionSettingButton = new Vector2(10000, 10000); //--jules--Position du bouton paramètres
-                    
+
                 }
                 //Interaction avec le menu quitter
                 Rectangle rBoutonOui = new Rectangle((int)_positionOui.X, (int)_positionOui.Y, _textureOui.Width, _textureOui.Height); //--jules--HitBox bouton fermer
@@ -173,9 +172,9 @@ namespace TerraPolis
                     _positionCloseButton = new Vector2(10000, 10000); //--jules--Position du bouton fermer
                     _positionOui = new Vector2(10000, 10000); //--jules--Position du menu quitter
                     _positionNon = new Vector2(10000, 10000); //--jules--Position du menu quitter
-                    _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1270), 600); //--jules--Position du bouton de démarrage
+                    _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
                     _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
-                    _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1220, 200); //--jules--Position du logo
+                    _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo
                     _positionSettingButton = new Vector2(_graphics.PreferredBackBufferWidth - 100, _graphics.PreferredBackBufferHeight - 100); //--jules--Position du bouton paramètres
                 }
             }
