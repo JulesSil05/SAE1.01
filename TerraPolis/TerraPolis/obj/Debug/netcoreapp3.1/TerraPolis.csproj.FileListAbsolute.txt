@@ -39,3 +39,8 @@ C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\No.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\yes.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\back_onglet_parametre.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\character.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\MonoGame.Extended.Graphics.dll
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\MonoGame.Extended.Tiled.dll
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\TerraPolis\bin\Debug\netcoreapp3.1\Content\character.sf

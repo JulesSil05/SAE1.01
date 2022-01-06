@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ItLraPD37Gn26FpirZ8Aw9L0opl1u38qucmp6OkWfWTFDmAw/PjeVZpB4DHuDi2bC4valxUXU0ELui/+BAT7/w==",
+  "dgSpecHash": "ul2oFuwqFMdOmdrHjETZZZfDVQZm44yUsU/o3A8C7JSxenSKTXHQNXaP7N+2RHpxVK26VMbQ+Yi1RiJHbnlfaA==",
   "success": true,
   "projectFilePath": "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\TerraPolis\\TerraPolis\\TerraPolis.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\jules\\.nuget\\packages\\autofac\\5.2.0\\autofac.5.2.0.nupkg.sha512",
     "C:\\Users\\jules\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
     "C:\\Users\\jules\\.nuget\\packages\\monogame.extended\\3.8.0\\monogame.extended.3.8.0.nupkg.sha512",
+    "C:\\Users\\jules\\.nuget\\packages\\monogame.extended.content.pipeline\\3.8.0\\monogame.extended.content.pipeline.3.8.0.nupkg.sha512",
+    "C:\\Users\\jules\\.nuget\\packages\\monogame.extended.graphics\\3.8.0\\monogame.extended.graphics.3.8.0.nupkg.sha512",
+    "C:\\Users\\jules\\.nuget\\packages\\monogame.extended.tiled\\3.8.0\\monogame.extended.tiled.3.8.0.nupkg.sha512",
     "C:\\Users\\jules\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
     "C:\\Users\\jules\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],

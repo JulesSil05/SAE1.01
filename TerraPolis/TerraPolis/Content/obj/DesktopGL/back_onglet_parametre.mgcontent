@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/back_onglet_parametre.png</SourceFile>
-  <SourceTime>2021-12-31T12:34:23.12296+01:00</SourceTime>
+  <SourceTime>2021-12-31T13:48:42.4802485+01:00</SourceTime>
   <DestFile>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/TerraPolis/Content/bin/DesktopGL/back_onglet_parametre.xnb</DestFile>
-  <DestTime>2021-12-31T12:35:40.1313562+01:00</DestTime>
+  <DestTime>2022-01-04T21:31:26.7620331+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T18:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

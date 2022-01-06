@@ -10,6 +10,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
+using MonoGame.Extended.Sprites;
+using MonoGame.Extended.Serialization;
+using MonoGame.Extended.Content;
 
 namespace TerraPolis
 {
@@ -25,6 +28,7 @@ namespace TerraPolis
 
         private Texture2D _textureStartButton; //--jules--Definition texture du bouton de démarrage
         private Vector2 _positionStartButton; //--jules--Definition position du bouton de démarrage
+        private bool _playButtonClicked;
         private Texture2D _textureExitButton; //--jules--Definition texture du bouton de sortie
         private Vector2 _positionExitButton; //--jules--Definition position du bouton de sortie
 
@@ -48,6 +52,10 @@ namespace TerraPolis
         private SoundEffect _clickButton; //--jules--Définition du son pour le clique sur un boutton du menu
 
         private MouseState _mouseState; //--jules--Définition etat de la souris
+
+        private Vector2 _persoPosition;
+        private AnimatedSprite _perso;
+        private int _vitessePerso = 100;
         //--jules--=============================
 
         public Game1()
@@ -66,12 +74,14 @@ namespace TerraPolis
             _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo
             _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
             _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
-            _positionOngletMenu = new Vector2(10000, 10000); //--jules--Position onglet menu
+            _positionOngletMenu = new Vector2(-10000, -10000); //--jules--Position onglet menu
             _positionSettingButton = new Vector2(_graphics.PreferredBackBufferWidth - 100, _graphics.PreferredBackBufferHeight - 100); //--jules--Position du bouton paramètres
-            _positionCloseButton = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-            _positionOngletMenuQuitter = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-            _positionOui = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-            _positionNon = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+            _positionCloseButton = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _positionOngletMenuQuitter = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _positionOui = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _positionNon = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _persoPosition = new Vector2(100, 100);
+            _playButtonClicked = false;
             base.Initialize();
         }
 
@@ -91,11 +101,14 @@ namespace TerraPolis
             _textureOngletMenuQuitter = Content.Load<Texture2D>("back_onglet_menu"); //--jules--Chargement du bouton fermer
             _textureOui = Content.Load<Texture2D>("Yes"); //--jules--Chargement du bouton fermer
             _textureNon = Content.Load<Texture2D>("No"); //--jules--Chargement du bouton fermer
+            SpriteSheet spriteSheet = Content.Load<SpriteSheet>("character.sf", new JsonContentLoader());
+            _perso = new AnimatedSprite(spriteSheet);
             _spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime)
         {
+            
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
@@ -135,14 +148,42 @@ namespace TerraPolis
                     _positionSettingButton = new Vector2(_graphics.PreferredBackBufferWidth - 100, _graphics.PreferredBackBufferHeight - 100); //--jules--Position du bouton paramètres
                 }
 
-                if (rBouton.Contains(_mouseState.Position)) //--jules--config bouton play
+                if (rBouton.Contains(_mouseState.Position) || _playButtonClicked == true) //--jules--config bouton play
                 {
+                    _playButtonClicked = true;
                     _clickButton.Play();
                     //--jules--
                     //====================================
                     //CINEMATIQUE DE LANCEMENT DE LA PARTIE
                     //====================================
                     //Lancement de la partie
+                    
+
+                    KeyboardState keyboardState = Keyboard.GetState();
+                    _positionBackground = new Vector2(-10000, -10000); //--jules--Position du fond
+                    _positionLogo = new Vector2(-10000, -10000); //--jules--Position du logo
+                    _positionStartButton = new Vector2(-10000, -10000); //--jules--Position du bouton de démarrage
+                    _positionExitButton = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
+                    _positionOngletMenu = new Vector2(10000, 10000); //--jules--Position onglet menu
+                    _positionSettingButton = new Vector2(-10000, -100000); //--jules--Position du bouton paramètres
+                    _positionCloseButton = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+                    _positionOngletMenuQuitter = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+                    _positionOui = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+                    _positionNon = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+
+                    float deltaSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    float walkSpeed = deltaSeconds * _vitessePerso;
+
+                    string animation = "idle";
+
+                    if (keyboardState.IsKeyDown(Keys.Q))
+                    {
+                        animation = "walkWest";
+                        _persoPosition.X -= walkSpeed;
+                    }
+                    _perso.Play(animation);
+                    _perso.Update(deltaSeconds);
+                    
                 }
 
                 if (rBoutonQuitter.Contains(_mouseState.Position)) //--jules--config bouton quitter
@@ -195,6 +236,7 @@ namespace TerraPolis
             _spriteBatch.Draw(_textureOngletMenuQuitter, _positionOngletMenuQuitter, Color.White); //--jules--affichage du bouton fermer 
             _spriteBatch.Draw(_textureOui, _positionOui, Color.White); //--jules--affichage du bouton fermer 
             _spriteBatch.Draw(_textureNon, _positionNon, Color.White); //--jules--affichage du bouton fermer 
+            _spriteBatch.Draw(_perso, _persoPosition);
             _spriteBatch.End(); //--jules--fin affichage
             base.Draw(gameTime);
         }

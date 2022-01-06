@@ -1,0 +1,34 @@
+{
+  "textureAtlas": {
+    "texture": "character.png",
+    "regionWidth": 52,
+    "regionHeight": 73
+  },
+  "cycles": {
+    "idle": {
+      "frames": [49],
+      "isLooping": false,
+      "frameDuration": 0.1
+    },
+    "walkSouth": {
+      "frames": [49,48,49,50],
+      "isLooping": false,
+      "frameDuration": 0.16
+    },
+    "walkNorth": {
+      "frames": [85,84,85,86],
+      "isLooping": false,
+      "frameDuration": 0.16
+    },
+    "walkWest": {
+      "frames": [61,60,61,62],
+      "isLooping": false,
+      "frameDuration": 0.16
+    },
+    "walkEast": {
+      "frames": [73,72,73,74],
+      "isLooping": false,
+      "frameDuration": 0.16
+    }
+  }
+}
