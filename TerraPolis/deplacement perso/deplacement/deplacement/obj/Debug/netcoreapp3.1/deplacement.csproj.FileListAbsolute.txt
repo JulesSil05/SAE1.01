@@ -70,3 +70,7 @@ C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\depl
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\obj\Debug\netcoreapp3.1\deplacement.dll
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\obj\Debug\netcoreapp3.1\deplacement.pdb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\obj\Debug\netcoreapp3.1\deplacement.genruntimeconfig.cache
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\bin\Debug\netcoreapp3.1\MonoGame.Extended.SceneGraphs.dll
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\bin\Debug\netcoreapp3.1\Content\bedroom.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\bin\Debug\netcoreapp3.1\Content\small_house.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\bin\Debug\netcoreapp3.1\Content\tall_house.xnb

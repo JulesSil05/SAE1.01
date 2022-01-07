@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/map.tmx</SourceFile>
-  <SourceTime>2022-01-05T23:13:55.6281842+01:00</SourceTime>
-  <DestFile>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/bin/DesktopGL/map.xnb</DestFile>
-  <DestTime>2022-01-06T09:11:20.7404832+01:00</DestTime>
+  <SourceFile>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/map.tmx</SourceFile>
+  <SourceTime>2022-01-07T15:39:45.1627419+01:00</SourceTime>
+  <DestFile>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/bin/DesktopGL/map.xnb</DestFile>
+  <DestTime>2022-01-07T17:43:16.6616973+01:00</DestTime>
   <Importer>TiledMapImporter</Importer>
   <ImporterTime>2020-08-29T19:17:30+02:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>
   <ProcessorTime>2020-08-29T19:17:30+02:00</ProcessorTime>
   <Dependencies />
   <BuildAsset>
-    <string>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/bin/DesktopGL/tilset_0.xnb</string>
+    <string>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/bin/DesktopGL/tilset_0.xnb</string>
   </BuildAsset>
   <BuildOutput />
 </PipelineBuildEvent>

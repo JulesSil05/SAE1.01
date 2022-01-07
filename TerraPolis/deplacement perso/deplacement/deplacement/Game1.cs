@@ -10,32 +10,37 @@ using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
 using System;
 using MonoGame.Extended.Screens;
+using MonoGame.Extended.Screens.Transitions;
 
 namespace deplacement
 {
     public class Game1 : Game
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
-        private Vector2 _persoPosition;
-        private AnimatedSprite _perso;
-        private TiledMap _tiledMap;
-        private TiledMapRenderer _tiledMapRenderer;
+        GraphicsDeviceManager _graphics;
+        public SpriteBatch _spriteBatch;
+        public Vector2 _persoPosition;
+        public AnimatedSprite _perso;
+        public TiledMap _tiledMap;
+        public TiledMapRenderer _tiledMapRenderer;
         private int _vitessePerso = 60;
 
-        private OrthographicCamera _camera;
-        private Vector2 _cameraPosition;
+        public OrthographicCamera _camera;
+        public Vector2 _cameraPosition;
 
-        private TiledMapTileLayer mapLayer;
+        public TiledMapTileLayer mapLayer;
 
-        private readonly ScreenManager _screenManager;
+        public readonly ScreenManager _screenManager;
         public SpriteBatch SpriteBatch { get; set; }
+        public int tempXPersoPosition;
+        public int tempYPersoPosition;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            _screenManager = new ScreenManager();
+            Components.Add(_screenManager);
         }
 
         protected override void Initialize()
@@ -47,8 +52,7 @@ namespace deplacement
             _persoPosition = new Vector2(400, 900);
             _cameraPosition = _persoPosition;
             GraphicsDevice.BlendState = BlendState.AlphaBlend;
-            _screenManager = new ScreenManager();
-            Components.Add(_screenManager);
+            
             base.Initialize();
 
             var viewportAdapter = new BoxingViewportAdapter(Window, GraphicsDevice, 600, 360);
@@ -67,7 +71,6 @@ namespace deplacement
             mapLayer = _tiledMap.GetLayer<TiledMapTileLayer>("contraintes");
         }
 
-
         private void MoveCamera(GameTime gameTime)
         {
             _cameraPosition = _persoPosition;
@@ -82,6 +85,16 @@ namespace deplacement
             if (!tile.Value.IsBlank)
                 return true;
             return false;
+        }
+        public void LoadScreenMap()
+        {
+            _screenManager.LoadScreen(new Map(this));
+            _persoPosition = new Vector2(120, 164);
+        }
+        public void LoadScreenSmallHouse()
+        {
+            _screenManager.LoadScreen(new MapSmallHouse(this));
+            _persoPosition = new Vector2(120, 164);
         }
 
         protected override void Update(GameTime gameTime)
@@ -131,8 +144,7 @@ namespace deplacement
                 animation = "walkEast";
                 if (!IsCollision(tx, ty))
                     _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
-            }
-            
+            }            
 
             _perso.Play(animation);
             _perso.Update(deltaSeconds);
@@ -143,6 +155,17 @@ namespace deplacement
             ushort x = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
             ushort y = (ushort)(_persoPosition.Y / _tiledMap.TileHeight);
             Console.WriteLine(mapLayer.GetTile(x, y).GlobalIdentifier);
+
+            if ((mapLayer.GetTile(x, y).GlobalIdentifier)==566)
+            {
+                tempXPersoPosition = (int)_persoPosition.X;
+                tempYPersoPosition = (int)_persoPosition.X;
+                LoadScreenSmallHouse();
+
+                /*lorsque le perso ressort il ne ressort pas au bon endroit
+                surement un problème de chargement de taille différentes entre les map*/
+            }
+            Console.WriteLine(_persoPosition.X + "," + _persoPosition.Y);
             base.Update(gameTime);
         }
 

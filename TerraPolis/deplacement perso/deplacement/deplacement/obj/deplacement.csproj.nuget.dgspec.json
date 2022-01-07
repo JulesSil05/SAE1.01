@@ -62,6 +62,14 @@
               "target": "Package",
               "version": "[3.8.0, )"
             },
+            "MonoGame.Extended.Graphics": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "MonoGame.Extended.SceneGraphs": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
             "MonoGame.Extended.Tiled": {
               "target": "Package",
               "version": "[3.8.0, )"

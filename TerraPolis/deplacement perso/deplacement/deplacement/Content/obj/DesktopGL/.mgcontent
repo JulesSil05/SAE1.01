@@ -4,11 +4,15 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/interior.png</File>
-    <File>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/map.tmx</File>
-    <File>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/motw.png</File>
+    <File>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/bedroom.tmx</File>
+    <File>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/map.tmx</File>
+    <File>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/motw.png</File>
+    <File>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/small_house.tmx</File>
+    <File>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/tall_house.tmx</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

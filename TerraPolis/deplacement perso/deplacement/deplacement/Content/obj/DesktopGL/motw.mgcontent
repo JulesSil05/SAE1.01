@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/motw.png</SourceFile>
-  <SourceTime>2022-01-04T15:32:46.5730594+01:00</SourceTime>
-  <DestFile>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/bin/DesktopGL/motw.xnb</DestFile>
-  <DestTime>2022-01-05T11:19:45.695531+01:00</DestTime>
+  <SourceFile>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/motw.png</SourceFile>
+  <SourceTime>2022-01-06T09:23:36.4752152+01:00</SourceTime>
+  <DestFile>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/bin/DesktopGL/motw.xnb</DestFile>
+  <DestTime>2022-01-07T17:43:16.6905971+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T18:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

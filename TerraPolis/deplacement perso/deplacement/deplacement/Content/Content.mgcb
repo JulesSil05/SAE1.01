@@ -18,6 +18,11 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin bedroom.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:bedroom.tmx
+
 #begin map.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
@@ -34,4 +39,14 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:motw.png
+
+#begin small_house.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:small_house.tmx
+
+#begin tall_house.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:tall_house.tmx
 
