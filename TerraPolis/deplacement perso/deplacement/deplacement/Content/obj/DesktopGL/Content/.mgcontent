@@ -4,8 +4,8 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/map.tmx</File>
-    <File>C:/Users/jules/Desktop/deplacement perso/deplacement/deplacement/Content/motw.png</File>
+    <File>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/map.tmx</File>
+    <File>C:/Users/jules/Desktop/SAE/SAE1.01/TerraPolis/deplacement perso/deplacement/deplacement/Content/motw.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

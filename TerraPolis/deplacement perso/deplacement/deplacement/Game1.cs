@@ -8,6 +8,8 @@ using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
 using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
+using System;
+using MonoGame.Extended.Screens;
 
 namespace deplacement
 {
@@ -26,6 +28,9 @@ namespace deplacement
 
         private TiledMapTileLayer mapLayer;
 
+        private readonly ScreenManager _screenManager;
+        public SpriteBatch SpriteBatch { get; set; }
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -42,6 +47,8 @@ namespace deplacement
             _persoPosition = new Vector2(400, 900);
             _cameraPosition = _persoPosition;
             GraphicsDevice.BlendState = BlendState.AlphaBlend;
+            _screenManager = new ScreenManager();
+            Components.Add(_screenManager);
             base.Initialize();
 
             var viewportAdapter = new BoxingViewportAdapter(Window, GraphicsDevice, 600, 360);
@@ -83,6 +90,7 @@ namespace deplacement
                 Exit();
 
             // TODO: Add your update logic here
+            
 
             float deltaSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float walkSpeed = deltaSeconds * _vitessePerso;
@@ -132,6 +140,9 @@ namespace deplacement
 
             MoveCamera(gameTime);
             _camera.LookAt(_cameraPosition);
+            ushort x = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
+            ushort y = (ushort)(_persoPosition.Y / _tiledMap.TileHeight);
+            Console.WriteLine(mapLayer.GetTile(x, y).GlobalIdentifier);
             base.Update(gameTime);
         }
 

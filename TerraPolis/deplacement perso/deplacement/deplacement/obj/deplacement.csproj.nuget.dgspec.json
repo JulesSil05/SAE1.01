@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jules\\Desktop\\deplacement perso\\deplacement\\deplacement\\deplacement.csproj": {}
+    "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\TerraPolis\\deplacement perso\\deplacement\\deplacement\\deplacement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jules\\Desktop\\deplacement perso\\deplacement\\deplacement\\deplacement.csproj": {
+    "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\TerraPolis\\deplacement perso\\deplacement\\deplacement\\deplacement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jules\\Desktop\\deplacement perso\\deplacement\\deplacement\\deplacement.csproj",
+        "projectUniqueName": "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\TerraPolis\\deplacement perso\\deplacement\\deplacement\\deplacement.csproj",
         "projectName": "deplacement",
-        "projectPath": "C:\\Users\\jules\\Desktop\\deplacement perso\\deplacement\\deplacement\\deplacement.csproj",
+        "projectPath": "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\TerraPolis\\deplacement perso\\deplacement\\deplacement\\deplacement.csproj",
         "packagesPath": "C:\\Users\\jules\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jules\\Desktop\\deplacement perso\\deplacement\\deplacement\\obj\\",
+        "outputPath": "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\TerraPolis\\deplacement perso\\deplacement\\deplacement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
