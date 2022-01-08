@@ -74,3 +74,4 @@ C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\depl
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\bin\Debug\netcoreapp3.1\Content\bedroom.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\bin\Debug\netcoreapp3.1\Content\small_house.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\bin\Debug\netcoreapp3.1\Content\tall_house.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\TerraPolis\deplacement perso\deplacement\deplacement\bin\Debug\netcoreapp3.1\Content\panneau_porte_ferme.xnb

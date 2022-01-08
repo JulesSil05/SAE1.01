@@ -30,7 +30,9 @@ namespace deplacement
             base.LoadContent();
         }
         public override void Update(GameTime gameTime)
-        { }
+        {
+
+        }
 
         public override void Draw(GameTime gameTime)
         {
@@ -40,6 +42,9 @@ namespace deplacement
             _myGame._spriteBatch.Begin(transformMatrix: transformMatrix);
             _myGame._spriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
             _myGame._tiledMapRenderer.Draw(_myGame._camera.GetViewMatrix());
+            _myGame._spriteBatch.End();
+            _myGame._spriteBatch.Begin();
+            _myGame._spriteBatch.Draw(_myGame._texturePanneau, _myGame._positionPanneau, Color.White);
             _myGame._spriteBatch.End();
 
         }

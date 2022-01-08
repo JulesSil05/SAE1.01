@@ -31,7 +31,13 @@ namespace deplacement
             base.LoadContent();
         }
         public override void Update(GameTime gameTime)
-        {}
+        {
+            if (_myGame._persoPosition.Y >= 170)
+            {
+                _myGame.LoadScreenMap();
+                _myGame._persoPosition = new Vector2(313, 968);
+            }
+        }
         public override void Draw(GameTime gameTime)
         {
             _myGame.GraphicsDevice.Clear(Color.Black);

@@ -29,10 +29,15 @@ namespace deplacement
 
         public TiledMapTileLayer mapLayer;
 
+        public bool verifPanneau = false;
+
         public readonly ScreenManager _screenManager;
         public SpriteBatch SpriteBatch { get; set; }
-        public int tempXPersoPosition;
-        public int tempYPersoPosition;
+
+        public Texture2D _texturePanneau;
+        public Vector2 _positionPanneau;
+
+
 
         public Game1()
         {
@@ -51,6 +56,7 @@ namespace deplacement
             _graphics.ApplyChanges(); //--jules--Application des changements de taille
             _persoPosition = new Vector2(400, 900);
             _cameraPosition = _persoPosition;
+            _positionPanneau = new Vector2(-626, 50);
             GraphicsDevice.BlendState = BlendState.AlphaBlend;
             
             base.Initialize();
@@ -67,6 +73,7 @@ namespace deplacement
             SpriteSheet spriteSheet = Content.Load<SpriteSheet>("motw.sf", new JsonContentLoader());
             _perso = new AnimatedSprite(spriteSheet);
             _tiledMap = Content.Load<TiledMap>("map");
+            _texturePanneau = Content.Load<Texture2D>("panneau_porte_ferme");
             _tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _tiledMap);
             mapLayer = _tiledMap.GetLayer<TiledMapTileLayer>("contraintes");
         }
@@ -94,7 +101,18 @@ namespace deplacement
         public void LoadScreenSmallHouse()
         {
             _screenManager.LoadScreen(new MapSmallHouse(this));
-            _persoPosition = new Vector2(120, 164);
+            _persoPosition = new Vector2(120, 154);
+        }
+        public void LoadScreenTallHouse()
+        {
+            _screenManager.LoadScreen(new MapTallHouse(this));
+            _persoPosition = new Vector2(168, 203);
+        }
+
+        public void LoadScreenBedroom()
+        {
+            _screenManager.LoadScreen(new MapBedroom(this));
+            _persoPosition = new Vector2(120, 200);
         }
 
         protected override void Update(GameTime gameTime)
@@ -114,7 +132,7 @@ namespace deplacement
             if (keyboardState.IsKeyDown(Keys.Z))
             {
                 ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight); //la tuile au-dessus en y
+                ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight+0.2); //la tuile au-dessus en y
                 animation = "walkNorth";
                 if (!IsCollision(tx, ty))
                 {
@@ -156,15 +174,32 @@ namespace deplacement
             ushort y = (ushort)(_persoPosition.Y / _tiledMap.TileHeight);
             Console.WriteLine(mapLayer.GetTile(x, y).GlobalIdentifier);
 
-            if ((mapLayer.GetTile(x, y).GlobalIdentifier)==566)
+            if (mapLayer.GetTile(x, y).GlobalIdentifier == 881)
+                verifPanneau = true;
+            else
+                verifPanneau = false;
+            if (_positionPanneau.X > -626 && verifPanneau == false)
             {
-                tempXPersoPosition = (int)_persoPosition.X;
-                tempYPersoPosition = (int)_persoPosition.X;
-                LoadScreenSmallHouse();
-
-                /*lorsque le perso ressort il ne ressort pas au bon endroit
-                surement un problème de chargement de taille différentes entre les map*/
+                _positionPanneau.X = _positionPanneau.X - 40;
             }
+
+            else if (mapLayer.GetTile(x, y).GlobalIdentifier == 566)
+            {
+                LoadScreenSmallHouse();
+            }
+
+            else if (mapLayer.GetTile(x, y).GlobalIdentifier == 2423)
+            {
+                LoadScreenTallHouse();
+            }
+
+            else if (mapLayer.GetTile(x, y).GlobalIdentifier == 881 && _positionPanneau.X < -66)
+            {
+                _positionPanneau.X = _positionPanneau.X + 40;
+            }
+            
+
+            Console.WriteLine("_positionPanneau Position : " + _positionPanneau.X + "," + _positionPanneau.Y);
             Console.WriteLine(_persoPosition.X + "," + _persoPosition.Y);
             base.Update(gameTime);
         }
@@ -178,6 +213,9 @@ namespace deplacement
             _spriteBatch.Begin(transformMatrix: transformMatrix);
             _spriteBatch.Draw(_perso, _persoPosition);
             _tiledMapRenderer.Draw(_camera.GetViewMatrix());
+            _spriteBatch.End();
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(_texturePanneau, _positionPanneau, Color.White);
             _spriteBatch.End();
             base.Draw(gameTime);
         }
