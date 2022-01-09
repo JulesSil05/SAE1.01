@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/Arial.spritefont</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/bedroom.tmx</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/case1.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/case2.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/case3.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/case4.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/coeur1.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/coeur2.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/coeur3.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/coeur4.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/coeur5.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/map.tmx</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/motw.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/panneau_porte_ferme.png</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/small_house.tmx</File>
+    <File>C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/tall_house.tmx</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

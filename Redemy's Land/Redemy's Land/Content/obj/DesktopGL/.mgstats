@@ -1,0 +1,7 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/bedroom.tmx","C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/bin/DesktopGL/bedroom.xnb","TiledMapProcessor","TiledMapContentItem",2854,2210,0,4527279
+"C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/interior.png","C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/bin/DesktopGL/interior_0.xnb","TextureProcessor","Texture2DContent",160404,4351477,0,2865877
+"C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/map.tmx","C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/bin/DesktopGL/map.xnb","TiledMapProcessor","TiledMapContentItem",243983,149941,0,0251024
+"C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/small_house.tmx","C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/bin/DesktopGL/small_house.xnb","TiledMapProcessor","TiledMapContentItem",3079,2869,0,0058035
+"C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/tall_house.tmx","C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/bin/DesktopGL/tall_house.xnb","TiledMapProcessor","TiledMapContentItem",6206,5097,0,0065084
+"C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/tilset.tsx","C:/Users/jules/Desktop/Redemy's Land/Redemy's Land/Content/bin/DesktopGL/tilset_0.xnb","TiledMapTilesetProcessor","TiledMapTilesetContentItem",248,131,0,35575
