@@ -10,7 +10,6 @@ using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
 using System;
 using MonoGame.Extended.Screens;
-using MonoGame.Extended.Screens.Transitions;
 
 namespace RedemysLand
 {
@@ -41,7 +40,7 @@ namespace RedemysLand
         public Texture2D _textureCase1, _textureCase2, _textureCase3, _textureCase4;
         public Vector2 _positionCase1, _positionCase2, _positionCase3, _positionCase4;
 
-        public float _chronoGame = 600;
+        public float _chronoGame = 500;
         public SpriteFont _police;
         public Vector2 _positionTexte;
 
@@ -150,6 +149,12 @@ namespace RedemysLand
             _persoPosition = new Vector2(120, 200);
         }
 
+        public void LoadScreenGrotte()
+        {
+            _screenManager.LoadScreen(new Grotte(this));
+            _persoPosition = new Vector2(407, 1086);
+        }
+
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -223,6 +228,11 @@ namespace RedemysLand
                 LoadScreenSmallHouse();
             }
 
+            else if (mapLayer.GetTile(x, y).GlobalIdentifier == 564)
+            {
+                LoadScreenGrotte();
+            }
+
             else if (mapLayer.GetTile(x, y).GlobalIdentifier == 2423)
             {
                 LoadScreenTallHouse();
@@ -234,6 +244,21 @@ namespace RedemysLand
             }
 
             _chronoGame -= deltaSeconds;
+
+
+            //Déplacement coeur
+            if (_chronoGame < 400)
+                _positionCoeur5 = new Vector2(-10000, -10000);
+            if (_chronoGame < 300)
+                _positionCoeur4 = new Vector2(-10000, -10000);
+            if (_chronoGame < 200)
+                _positionCoeur3 = new Vector2(-10000, -10000);
+            if (_chronoGame < 100)
+                _positionCoeur2 = new Vector2(-10000, -10000);
+            if (_chronoGame < 0)
+                _positionCoeur1 = new Vector2(-10000, -10000);
+            
+
 
             Console.WriteLine("_positionPanneau Position : " + _positionPanneau.X + "," + _positionPanneau.Y);
             Console.WriteLine(_persoPosition.X + "," + _persoPosition.Y);

@@ -1,0 +1,59 @@
+C:\Users\jules\Desktop\Remedy's Land\Redemy's Land.exe
+C:\Users\jules\Desktop\Remedy's Land\Content/Arial.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/background_menu.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/back_music.ogg
+C:\Users\jules\Desktop\Remedy's Land\Content/back_music.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/back_onglet_menu.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/back_onglet_parametre.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/bedroom.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/case1.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/case2.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/case3.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/case4.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/click_button.ogg
+C:\Users\jules\Desktop\Remedy's Land\Content/click_button.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/close.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/coeur1.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/coeur2.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/coeur3.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/coeur4.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/coeur5.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/exit_button.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/grotte.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/interior_0.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/interior_1.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/logo.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/map.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/motw.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/No.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/panneau_porte_ferme.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/setting_button.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/small_house.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/start_button.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/tall_house.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/tilset_0.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content/yes.xnb
+C:\Users\jules\Desktop\Remedy's Land\Content\motw.sf
+C:\Users\jules\Desktop\Remedy's Land\Content\panneau_porte_ferme.png
+C:\Users\jules\Desktop\Remedy's Land\Redemy's Land.dll
+C:\Users\jules\Desktop\Remedy's Land\Redemy's Land.deps.json
+C:\Users\jules\Desktop\Remedy's Land\Redemy's Land.runtimeconfig.json
+C:\Users\jules\Desktop\Remedy's Land\Redemy's Land.pdb
+C:\Users\jules\Desktop\Remedy's Land\Autofac.dll
+C:\Users\jules\Desktop\Remedy's Land\MonoGame.Extended.dll
+C:\Users\jules\Desktop\Remedy's Land\MonoGame.Extended.Animations.dll
+C:\Users\jules\Desktop\Remedy's Land\MonoGame.Extended.Collisions.dll
+C:\Users\jules\Desktop\Remedy's Land\MonoGame.Extended.Graphics.dll
+C:\Users\jules\Desktop\Remedy's Land\MonoGame.Extended.Input.dll
+C:\Users\jules\Desktop\Remedy's Land\MonoGame.Extended.SceneGraphs.dll
+C:\Users\jules\Desktop\Remedy's Land\MonoGame.Extended.Tiled.dll
+C:\Users\jules\Desktop\Remedy's Land\MonoGame.Framework.dll
+C:\Users\jules\Desktop\Remedy's Land\Newtonsoft.Json.dll
+C:\Users\jules\Desktop\Remedy's Land\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\jules\Desktop\Remedy's Land\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\jules\Desktop\Remedy's Land\runtimes\osx\native\libSDL2-2.0.0.dylib
+C:\Users\jules\Desktop\Remedy's Land\runtimes\osx\native\libopenal.1.dylib
+C:\Users\jules\Desktop\Remedy's Land\runtimes\win-x64\native\SDL2.dll
+C:\Users\jules\Desktop\Remedy's Land\runtimes\win-x64\native\soft_oal.dll
+C:\Users\jules\Desktop\Remedy's Land\runtimes\win-x86\native\SDL2.dll
+C:\Users\jules\Desktop\Remedy's Land\runtimes\win-x86\native\soft_oal.dll

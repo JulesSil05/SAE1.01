@@ -1,0 +1,59 @@
+C:\Users\jules\Desktop\Redemy's Land.exe
+C:\Users\jules\Desktop\Content/Arial.xnb
+C:\Users\jules\Desktop\Content/background_menu.xnb
+C:\Users\jules\Desktop\Content/back_music.ogg
+C:\Users\jules\Desktop\Content/back_music.xnb
+C:\Users\jules\Desktop\Content/back_onglet_menu.xnb
+C:\Users\jules\Desktop\Content/back_onglet_parametre.xnb
+C:\Users\jules\Desktop\Content/bedroom.xnb
+C:\Users\jules\Desktop\Content/case1.xnb
+C:\Users\jules\Desktop\Content/case2.xnb
+C:\Users\jules\Desktop\Content/case3.xnb
+C:\Users\jules\Desktop\Content/case4.xnb
+C:\Users\jules\Desktop\Content/click_button.ogg
+C:\Users\jules\Desktop\Content/click_button.xnb
+C:\Users\jules\Desktop\Content/close.xnb
+C:\Users\jules\Desktop\Content/coeur1.xnb
+C:\Users\jules\Desktop\Content/coeur2.xnb
+C:\Users\jules\Desktop\Content/coeur3.xnb
+C:\Users\jules\Desktop\Content/coeur4.xnb
+C:\Users\jules\Desktop\Content/coeur5.xnb
+C:\Users\jules\Desktop\Content/exit_button.xnb
+C:\Users\jules\Desktop\Content/grotte.xnb
+C:\Users\jules\Desktop\Content/interior_0.xnb
+C:\Users\jules\Desktop\Content/interior_1.xnb
+C:\Users\jules\Desktop\Content/logo.xnb
+C:\Users\jules\Desktop\Content/map.xnb
+C:\Users\jules\Desktop\Content/motw.xnb
+C:\Users\jules\Desktop\Content/No.xnb
+C:\Users\jules\Desktop\Content/panneau_porte_ferme.xnb
+C:\Users\jules\Desktop\Content/setting_button.xnb
+C:\Users\jules\Desktop\Content/small_house.xnb
+C:\Users\jules\Desktop\Content/start_button.xnb
+C:\Users\jules\Desktop\Content/tall_house.xnb
+C:\Users\jules\Desktop\Content/tilset_0.xnb
+C:\Users\jules\Desktop\Content/yes.xnb
+C:\Users\jules\Desktop\Content\motw.sf
+C:\Users\jules\Desktop\Content\panneau_porte_ferme.png
+C:\Users\jules\Desktop\Redemy's Land.dll
+C:\Users\jules\Desktop\Redemy's Land.deps.json
+C:\Users\jules\Desktop\Redemy's Land.runtimeconfig.json
+C:\Users\jules\Desktop\Redemy's Land.pdb
+C:\Users\jules\Desktop\Autofac.dll
+C:\Users\jules\Desktop\MonoGame.Extended.dll
+C:\Users\jules\Desktop\MonoGame.Extended.Animations.dll
+C:\Users\jules\Desktop\MonoGame.Extended.Collisions.dll
+C:\Users\jules\Desktop\MonoGame.Extended.Graphics.dll
+C:\Users\jules\Desktop\MonoGame.Extended.Input.dll
+C:\Users\jules\Desktop\MonoGame.Extended.SceneGraphs.dll
+C:\Users\jules\Desktop\MonoGame.Extended.Tiled.dll
+C:\Users\jules\Desktop\MonoGame.Framework.dll
+C:\Users\jules\Desktop\Newtonsoft.Json.dll
+C:\Users\jules\Desktop\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\jules\Desktop\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\jules\Desktop\runtimes\osx\native\libSDL2-2.0.0.dylib
+C:\Users\jules\Desktop\runtimes\osx\native\libopenal.1.dylib
+C:\Users\jules\Desktop\runtimes\win-x64\native\SDL2.dll
+C:\Users\jules\Desktop\runtimes\win-x64\native\soft_oal.dll
+C:\Users\jules\Desktop\runtimes\win-x86\native\SDL2.dll
+C:\Users\jules\Desktop\runtimes\win-x86\native\soft_oal.dll
