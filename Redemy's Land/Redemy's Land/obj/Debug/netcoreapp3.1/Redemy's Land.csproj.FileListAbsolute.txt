@@ -119,3 +119,5 @@ C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcore
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\panneau_porte_ferme.png
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\grotte.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\interior_1.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\texte_intro.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\parchemin.xnb

@@ -43,24 +43,24 @@ namespace RedemysLand
             _myGame.GraphicsDevice.Clear(Color.Black);
             var transformMatrix = _myGame._camera.GetViewMatrix();
 
-            _myGame._spriteBatch.Begin(transformMatrix: transformMatrix);
-            _myGame._spriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
+            _myGame.SpriteBatch.Begin(transformMatrix: transformMatrix);
+            _myGame.SpriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
             _myGame._tiledMapRenderer.Draw(_myGame._camera.GetViewMatrix());
-            _myGame._spriteBatch.End();
-            _myGame._spriteBatch.Begin();
-            _myGame._spriteBatch.Draw(_myGame._textureCoeur1, _myGame._positionCoeur1, Color.White);
-            _myGame._spriteBatch.Draw(_myGame._textureCoeur2, _myGame._positionCoeur2, Color.White);
-            _myGame._spriteBatch.Draw(_myGame._textureCoeur3, _myGame._positionCoeur3, Color.White);
-            _myGame._spriteBatch.Draw(_myGame._textureCoeur4, _myGame._positionCoeur4, Color.White);
-            _myGame._spriteBatch.Draw(_myGame._textureCoeur5, _myGame._positionCoeur5, Color.White);
+            _myGame.SpriteBatch.End();
+            _myGame.SpriteBatch.Begin();
+            _myGame.SpriteBatch.Draw(_myGame._textureCoeur1, _myGame._positionCoeur1, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCoeur2, _myGame._positionCoeur2, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCoeur3, _myGame._positionCoeur3, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCoeur4, _myGame._positionCoeur4, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCoeur5, _myGame._positionCoeur5, Color.White);
 
-            _myGame._spriteBatch.Draw(_myGame._textureCase1, _myGame._positionCase1, Color.White);
-            _myGame._spriteBatch.Draw(_myGame._textureCase2, _myGame._positionCase2, Color.White);
-            _myGame._spriteBatch.Draw(_myGame._textureCase3, _myGame._positionCase3, Color.White);
-            _myGame._spriteBatch.Draw(_myGame._textureCase4, _myGame._positionCase4, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCase1, _myGame._positionCase1, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCase2, _myGame._positionCase2, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCase3, _myGame._positionCase3, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCase4, _myGame._positionCase4, Color.White);
 
-            _myGame._spriteBatch.DrawString(_myGame._police, "" + Math.Round(_myGame._chronoGame) + "", _myGame._positionTexte, Color.White);
-            _myGame._spriteBatch.End();
+            _myGame.SpriteBatch.DrawString(_myGame._police, "" + Math.Round(_myGame._chronoGame) + "", _myGame._positionTexte, Color.White);
+            _myGame.SpriteBatch.End();
 
 
         }

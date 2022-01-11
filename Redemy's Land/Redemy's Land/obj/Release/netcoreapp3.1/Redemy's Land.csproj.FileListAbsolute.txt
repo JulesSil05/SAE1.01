@@ -67,3 +67,5 @@ C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\obj\Release\netco
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\obj\Release\netcoreapp3.1\Redemy's Land.dll
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\obj\Release\netcoreapp3.1\Redemy's Land.pdb
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\obj\Release\netcoreapp3.1\Redemy's Land.genruntimeconfig.cache
+C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Release\netcoreapp3.1\Content\parchemin.xnb
+C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Release\netcoreapp3.1\Content\texte_intro.xnb

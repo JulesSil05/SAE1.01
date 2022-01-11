@@ -10,13 +10,45 @@ using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
 using System;
 using MonoGame.Extended.Screens;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace RedemysLand
 {
     public class Game1 : Game
     {
-        GraphicsDeviceManager _graphics;
-        public SpriteBatch _spriteBatch;
+
+        //MENU
+        private GraphicsDeviceManager _graphics;
+
+        private Texture2D _textureBackground; //--jules--Definition texture de fond
+        private Vector2 _positionBackground; //--jules--Definition position de fond
+        private Texture2D _textureLogo; //--jules--Definition texture du logo
+        private Vector2 _positionLogo; //--jules--Definition position du logo
+
+        private Texture2D _textureStartButton; //--jules--Definition texture du bouton de démarrage
+        private Vector2 _positionStartButton; //--jules--Definition position du bouton de démarrage
+        private bool _playButtonClicked;
+        private Texture2D _textureExitButton; //--jules--Definition texture du bouton de sortie
+        private Vector2 _positionExitButton; //--jules--Definition position du bouton de sortie
+
+        private Texture2D _textureOngletMenuQuitter; //--jules--Definition texture onglet menu
+        private Vector2 _positionOngletMenuQuitter; //--jules--Definition position onglet menu
+
+        private Texture2D _textureCloseButton; //--jules--Definition texture bouton fermer
+        private Vector2 _positionCloseButton; //--jules--Definition position bouton fermer
+
+        private Texture2D _textureOui; //--jules--Definition texture bouton fermer
+        private Vector2 _positionOui; //--jules--Definition position bouton fermer
+        private Texture2D _textureNon; //--jules--Definition texture bouton fermer
+        private Vector2 _positionNon; //--jules--Definition position bouton fermer
+
+        private Song _backMusic; //--jules--Définition de la musique de fond pour le menu
+        private SoundEffect _clickButton; //--jules--Définition du son pour le clique sur un boutton du menu
+
+        private MouseState _mouseState; //--jules--Définition etat de la souris
+
+        //GAME
         public Vector2 _persoPosition;
         public AnimatedSprite _perso;
         public TiledMap _tiledMap;
@@ -44,6 +76,9 @@ namespace RedemysLand
         public SpriteFont _police;
         public Vector2 _positionTexte;
 
+        public Texture2D _textureTexteIntro;
+        public Vector2 _positionTexteIntro;
+
 
 
         public Game1()
@@ -59,7 +94,7 @@ namespace RedemysLand
         {
             // TODO: Add your initialization logic here
             _graphics.PreferredBackBufferWidth = 1552; //--jules--Definition de la largeur de l'écran
-            _graphics.PreferredBackBufferHeight = _graphics.PreferredBackBufferHeight * 2; //--jules--Definition de la hauteur de l'écran
+            _graphics.PreferredBackBufferHeight = 960; //--jules--Definition de la hauteur de l'écran
             _graphics.ApplyChanges(); //--jules--Application des changements de taille
             _persoPosition = new Vector2(864, 886);
             _cameraPosition = _persoPosition;
@@ -77,7 +112,20 @@ namespace RedemysLand
 
             _positionTexte = new Vector2(1300, 20);
 
+            _positionTexteIntro = new Vector2(350, 50);
+
             GraphicsDevice.BlendState = BlendState.AlphaBlend;
+
+            //MENU
+            _positionBackground = new Vector2(0, 0); //--jules--Position du fond
+            _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo
+            _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
+            _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
+            _positionCloseButton = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _positionOngletMenuQuitter = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _positionOui = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _positionNon = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _playButtonClicked = false;
 
             base.Initialize();
 
@@ -87,7 +135,7 @@ namespace RedemysLand
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+           SpriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
             SpriteSheet spriteSheet = Content.Load<SpriteSheet>("motw.sf", new JsonContentLoader());
@@ -106,9 +154,25 @@ namespace RedemysLand
             _textureCase3 = Content.Load<Texture2D>("case3");
             _textureCase4 = Content.Load<Texture2D>("case4");
 
+            _textureTexteIntro = Content.Load<Texture2D>("parchemin");
+
             _police = Content.Load<SpriteFont>("Arial");
 
             mapLayer = _tiledMap.GetLayer<TiledMapTileLayer>("contraintes");
+
+            //MENU
+            _textureBackground = Content.Load<Texture2D>("background_menu"); //--jules--Chargement texture de fond
+            _textureLogo = Content.Load<Texture2D>("logo"); //--jules--Chargement texture du logo
+            _textureStartButton = Content.Load<Texture2D>("start_button"); //--jules--Chargement texture du bouton de démarrage
+            _textureExitButton = Content.Load<Texture2D>("exit_button"); //--jules--Chargement texture du bouton de sortie
+            _backMusic = Content.Load<Song>("back_music"); //--jules--Chargement du fichier audio de la musique de fond du menu
+            _clickButton = Content.Load<SoundEffect>("click_button"); //--jules--Chargement du fichier audio de la musique de fond du menu
+            MediaPlayer.Play(_backMusic); //--jules--Démarrage de la musique de fond
+            MediaPlayer.IsRepeating = true; //--jules--Répétition de la musique
+            _textureCloseButton = Content.Load<Texture2D>("close"); //--jules--Chargement du bouton fermer
+            _textureOngletMenuQuitter = Content.Load<Texture2D>("back_onglet_menu"); //--jules--Chargement du bouton fermer
+            _textureOui = Content.Load<Texture2D>("Yes"); //--jules--Chargement du bouton fermer
+            _textureNon = Content.Load<Texture2D>("No"); //--jules--Chargement du bouton fermer
 
         }
 
@@ -157,111 +221,198 @@ namespace RedemysLand
 
         protected override void Update(GameTime gameTime)
         {
+            //MENU=============================================================
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
+        
 
             float deltaSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float walkSpeed = deltaSeconds * _vitessePerso;
 
-            string animation = "face";
+            _positionBackground.X = _positionBackground.X - 1; //--jules--Déplacement du fond 
+            if (_positionBackground.X < -3064)
+                _positionBackground.X = 0;
 
-            KeyboardState keyboardState = Keyboard.GetState();
-            if (keyboardState.IsKeyDown(Keys.Z))
+            //--jules--Interception souris
+            _mouseState = Mouse.GetState();
+
+            Rectangle rBouton = new Rectangle((int)_positionStartButton.X, (int)_positionStartButton.Y, _textureStartButton.Width, _textureStartButton.Height); //--jules--HitBox bouton play
+            Rectangle rBoutonQuitter = new Rectangle((int)_positionExitButton.X, (int)_positionExitButton.Y, _textureExitButton.Width, _textureExitButton.Height); //--jules--HitBox bouton quitter
+
+            Rectangle rBoutonClose = new Rectangle((int)_positionCloseButton.X, (int)_positionCloseButton.Y, _textureCloseButton.Width, _textureCloseButton.Height); //--jules--HitBox bouton fermer
+            if (rBouton.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed) //--jules--config bouton play
             {
-                ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
-                animation = "walkNorth";
-                if (!IsCollision(tx, ty))
-                {
-                    _persoPosition.Y -= walkSpeed; // _persoPosition vecteur position du sprite
-                }
+                _playButtonClicked = true;
+                _clickButton.Play();
+
+                _positionBackground = new Vector2(-10000, -10000); //--jules--Position du fond
+                _positionLogo = new Vector2(-10000, -10000); //--jules--Position du logo
+                _positionStartButton = new Vector2(-10000, -10000); //--jules--Position du bouton de démarrage
+                _positionExitButton = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
+
+                _positionCloseButton = new Vector2(980, 150); //--jules--Position du bouton fermer
+                _positionOngletMenuQuitter = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+                _positionOui = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+                _positionNon = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+
+                //====================================
+                //CINEMATIQUE DE LANCEMENT DE LA PARTIE
+                //====================================              
+
+
+                // TODO: Add your update logic here
             }
-            if (keyboardState.IsKeyDown(Keys.S))
-            {
-                ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
-                animation = "walkSouth";
-                if (!IsCollision(tx, ty))
-                    _persoPosition.Y += walkSpeed; // _persoPosition vecteur position du sprite
-            }
-            if (keyboardState.IsKeyDown(Keys.Q))
-            {
-                ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth - 0.5);
-                ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
-                animation = "walkWest";
-                if (!IsCollision(tx, ty))
-                    _persoPosition.X -= walkSpeed; // _persoPosition vecteur position du sprite
-            }
-            if (keyboardState.IsKeyDown(Keys.D))
-            {
-                ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth + 0.6);
-                ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
-                animation = "walkEast";
-                if (!IsCollision(tx, ty))
-                    _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
-            }
-
-            _perso.Play(animation);
-            _perso.Update(deltaSeconds);
-            _tiledMapRenderer.Update(gameTime);
-
-            MoveCamera(gameTime);
-            _camera.LookAt(_cameraPosition);
-            ushort x = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-            ushort y = (ushort)(_persoPosition.Y / _tiledMap.TileHeight);
-            Console.WriteLine(mapLayer.GetTile(x, y).GlobalIdentifier);
-
-            if (mapLayer.GetTile(x, y).GlobalIdentifier == 881)
-                verifPanneau = true;
-            else
-                verifPanneau = false;
-            if (_positionPanneau.X > -626 && verifPanneau == false)
-            {
-                _positionPanneau.X = _positionPanneau.X - 40;
-            }
-
-            else if (mapLayer.GetTile(x, y).GlobalIdentifier == 566)
-            {
-                LoadScreenSmallHouse();
-            }
-
-            else if (mapLayer.GetTile(x, y).GlobalIdentifier == 564)
-            {
-                LoadScreenGrotte();
-            }
-
-            else if (mapLayer.GetTile(x, y).GlobalIdentifier == 2423)
-            {
-                LoadScreenTallHouse();
-            }
-
-            else if (mapLayer.GetTile(x, y).GlobalIdentifier == 881 && _positionPanneau.X < -66)
-            {
-                _positionPanneau.X = _positionPanneau.X + 40;
-            }
-
-            _chronoGame -= deltaSeconds;
-
-
-            //Déplacement coeur
-            if (_chronoGame < 400)
-                _positionCoeur5 = new Vector2(-10000, -10000);
-            if (_chronoGame < 300)
-                _positionCoeur4 = new Vector2(-10000, -10000);
-            if (_chronoGame < 200)
-                _positionCoeur3 = new Vector2(-10000, -10000);
-            if (_chronoGame < 100)
-                _positionCoeur2 = new Vector2(-10000, -10000);
-            if (_chronoGame < 0)
-                _positionCoeur1 = new Vector2(-10000, -10000);
+            
             
 
+            else if (_mouseState.LeftButton == ButtonState.Pressed && _playButtonClicked != true)
+            {
+                if (rBoutonQuitter.Contains(_mouseState.Position)) //--jules--config bouton quitter
+                {
+                    //Affichage du menu quitter
+                    _clickButton.Play();
+                    _positionOngletMenuQuitter = new Vector2((_graphics.PreferredBackBufferWidth / 2) - 268, (_graphics.PreferredBackBufferHeight / 2) - 165); //--jules--Position du menu quitter
+                    _positionOui = new Vector2(600, 540); //--jules--Position du menu quitter
+                    _positionNon = new Vector2(840, 540); //--jules--Position du menu quitter
+                    _positionStartButton = new Vector2(10000, 10000); //--jules--Position du bouton de démarrage
+                    _positionExitButton = new Vector2(10000, 10000); //--jules--Position du bouton de sortie
+                    _positionLogo = new Vector2(10000, 10000); //--jules--Position du logo
 
-            Console.WriteLine("_positionPanneau Position : " + _positionPanneau.X + "," + _positionPanneau.Y);
-            Console.WriteLine(_persoPosition.X + "," + _persoPosition.Y);
+
+                }
+                //Interaction avec le menu quitter
+                Rectangle rBoutonOui = new Rectangle((int)_positionOui.X, (int)_positionOui.Y, _textureOui.Width, _textureOui.Height); //--jules--HitBox bouton fermer
+                if (rBoutonOui.Contains(_mouseState.Position)) //--jules--config bouton fermer
+                {
+                    Exit();
+                }
+                Rectangle rBoutonNon = new Rectangle((int)_positionNon.X, (int)_positionNon.Y, _textureNon.Width, _textureNon.Height); //--jules--HitBox bouton fermer
+                if (rBoutonNon.Contains(_mouseState.Position)) //--jules--config bouton fermer
+                {
+                    _clickButton.Play();
+                    _positionOngletMenuQuitter = new Vector2(10000, 10000); //--jules--Position onglet menu
+                    _positionCloseButton = new Vector2(10000, 10000); //--jules--Position du bouton fermer
+                    _positionOui = new Vector2(10000, 10000); //--jules--Position du menu quitter
+                    _positionNon = new Vector2(10000, 10000); //--jules--Position du menu quitter
+                    _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
+                    _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
+                    _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo
+                   
+                }
+            }
+
+            
+            else if (rBoutonClose.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed) //--jules--config bouton fermer
+            {
+                _positionTexteIntro = new Vector2(-10000, -10000);
+                _positionCloseButton = new Vector2(-10000, -10000);
+            }
+            else if (_playButtonClicked == true)
+            {
+                //GAME=============================================================
+                
+
+                string animation = "face";
+
+                KeyboardState keyboardState = Keyboard.GetState();
+                if (keyboardState.IsKeyDown(Keys.Z))
+                {
+                    ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
+                    ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
+                    animation = "walkNorth";
+                    if (!IsCollision(tx, ty))
+                    {
+                        _persoPosition.Y -= walkSpeed; // _persoPosition vecteur position du sprite
+                    }
+                }
+                if (keyboardState.IsKeyDown(Keys.S))
+                {
+                    ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
+                    ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
+                    animation = "walkSouth";
+                    if (!IsCollision(tx, ty))
+                        _persoPosition.Y += walkSpeed; // _persoPosition vecteur position du sprite
+                }
+                if (keyboardState.IsKeyDown(Keys.Q))
+                {
+                    ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth - 0.5);
+                    ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                    animation = "walkWest";
+                    if (!IsCollision(tx, ty))
+                        _persoPosition.X -= walkSpeed; // _persoPosition vecteur position du sprite
+                }
+                if (keyboardState.IsKeyDown(Keys.D))
+                {
+                    ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth + 0.6);
+                    ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                    animation = "walkEast";
+                    if (!IsCollision(tx, ty))
+                        _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
+                }
+                _perso.Play(animation);
+                _perso.Update(deltaSeconds);
+                _tiledMapRenderer.Update(gameTime);
+
+                MoveCamera(gameTime);
+                _camera.LookAt(_cameraPosition);
+                ushort x = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
+                ushort y = (ushort)(_persoPosition.Y / _tiledMap.TileHeight);
+                Console.WriteLine(mapLayer.GetTile(x, y).GlobalIdentifier);
+
+                if (mapLayer.GetTile(x, y).GlobalIdentifier == 881)
+                    verifPanneau = true;
+                else
+                    verifPanneau = false;
+                if (_positionPanneau.X > -626 && verifPanneau == false)
+                {
+                    _positionPanneau.X = _positionPanneau.X - 40;
+                }
+
+                else if (mapLayer.GetTile(x, y).GlobalIdentifier == 566)
+                {
+                    LoadScreenSmallHouse();
+                }
+
+                else if (mapLayer.GetTile(x, y).GlobalIdentifier == 564)
+                {
+                    LoadScreenGrotte();
+                }
+
+                else if (mapLayer.GetTile(x, y).GlobalIdentifier == 2423)
+                {
+                    LoadScreenTallHouse();
+                }
+
+                else if (mapLayer.GetTile(x, y).GlobalIdentifier == 881 && _positionPanneau.X < -66)
+                {
+                    _positionPanneau.X = _positionPanneau.X + 40;
+                }
+
+                _chronoGame -= deltaSeconds;
+
+
+                //Déplacement coeur
+                if (_chronoGame < 400)
+                    _positionCoeur5 = new Vector2(-10000, -10000);
+                if (_chronoGame < 300)
+                    _positionCoeur4 = new Vector2(-10000, -10000);
+                if (_chronoGame < 200)
+                    _positionCoeur3 = new Vector2(-10000, -10000);
+                if (_chronoGame < 100)
+                    _positionCoeur2 = new Vector2(-10000, -10000);
+                if (_chronoGame < 0)
+                    _positionCoeur1 = new Vector2(-10000, -10000);
+
+
+
+                Console.WriteLine("_positionPanneau Position : " + _positionPanneau.X + "," + _positionPanneau.Y);
+                Console.WriteLine(_persoPosition.X + "," + _persoPosition.Y);
+                Console.WriteLine(_graphics.PreferredBackBufferHeight);
+                
+                //GAME=============================================================
+
+            }
             base.Update(gameTime);
         }
 
@@ -271,27 +422,34 @@ namespace RedemysLand
 
             // TODO: Add your drawing code here
             var transformMatrix = _camera.GetViewMatrix();
-            _spriteBatch.Begin(transformMatrix: transformMatrix);
-            _spriteBatch.Draw(_perso, _persoPosition);
+            SpriteBatch.Begin(transformMatrix: transformMatrix);
+            SpriteBatch.Draw(_perso, _persoPosition);
             _tiledMapRenderer.Draw(_camera.GetViewMatrix());
-            _spriteBatch.End();
-            _spriteBatch.Begin();
-            _spriteBatch.Draw(_textureCoeur1, _positionCoeur1, Color.White);
-            _spriteBatch.Draw(_textureCoeur2, _positionCoeur2, Color.White);
-            _spriteBatch.Draw(_textureCoeur3, _positionCoeur3, Color.White);
-            _spriteBatch.Draw(_textureCoeur4, _positionCoeur4, Color.White);
-            _spriteBatch.Draw(_textureCoeur5, _positionCoeur5, Color.White);
+            SpriteBatch.End();
+            SpriteBatch.Begin();
+            SpriteBatch.Draw(_textureCoeur1, _positionCoeur1, Color.White);
+            SpriteBatch.Draw(_textureCoeur2, _positionCoeur2, Color.White);
+            SpriteBatch.Draw(_textureCoeur3, _positionCoeur3, Color.White);
+            SpriteBatch.Draw(_textureCoeur4, _positionCoeur4, Color.White);
+            SpriteBatch.Draw(_textureCoeur5, _positionCoeur5, Color.White);
+            SpriteBatch.Draw(_textureCase1, _positionCase1, Color.White);
+            SpriteBatch.Draw(_textureCase2, _positionCase2, Color.White);
+            SpriteBatch.Draw(_textureCase3, _positionCase3, Color.White);
+            SpriteBatch.Draw(_textureCase4, _positionCase4, Color.White);
+            SpriteBatch.Draw(_texturePanneau, _positionPanneau, Color.White);
+            SpriteBatch.DrawString(_police, "" + Math.Round(_chronoGame) + "", _positionTexte, Color.White);
+            SpriteBatch.Draw(_textureTexteIntro, _positionTexteIntro, Color.White);
 
-            _spriteBatch.Draw(_textureCase1, _positionCase1, Color.White);
-            _spriteBatch.Draw(_textureCase2, _positionCase2, Color.White);
-            _spriteBatch.Draw(_textureCase3, _positionCase3, Color.White);
-            _spriteBatch.Draw(_textureCase4, _positionCase4, Color.White);
-
-            _spriteBatch.Draw(_texturePanneau, _positionPanneau, Color.White);
-
-
-            _spriteBatch.DrawString(_police, "" + Math.Round(_chronoGame) + "", _positionTexte, Color.White);
-            _spriteBatch.End();
+            //MENU
+            SpriteBatch.Draw(_textureBackground, _positionBackground, Color.White); //--jules--affichage fond du menu
+            SpriteBatch.Draw(_textureLogo, _positionLogo, Color.White); //--jules--affichage du logo
+            SpriteBatch.Draw(_textureStartButton, _positionStartButton, Color.White); //--jules--affichage du bouton jouer
+            SpriteBatch.Draw(_textureExitButton, _positionExitButton, Color.White); //--jules--affichage du bouton quitter
+            SpriteBatch.Draw(_textureCloseButton, _positionCloseButton, Color.White); //--jules--affichage du bouton fermer 
+            SpriteBatch.Draw(_textureOngletMenuQuitter, _positionOngletMenuQuitter, Color.White); //--jules--affichage du bouton fermer 
+            SpriteBatch.Draw(_textureOui, _positionOui, Color.White); //--jules--affichage du bouton fermer 
+            SpriteBatch.Draw(_textureNon, _positionNon, Color.White); //--jules--affichage du bouton fermer 
+            SpriteBatch.End();
             base.Draw(gameTime);
         }
     }
