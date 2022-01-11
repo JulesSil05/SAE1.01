@@ -46,7 +46,7 @@ namespace RedemysLand
         private Song _backMusic; //--jules--Définition de la musique de fond pour le menu
         private SoundEffect _clickButton; //--jules--Définition du son pour le clique sur un boutton du menu
 
-        private MouseState _mouseState; //--jules--Définition etat de la souris
+        public MouseState _mouseState; //--jules--Définition etat de la souris
 
         //GAME
         public Vector2 _persoPosition;
@@ -60,7 +60,7 @@ namespace RedemysLand
 
         public TiledMapTileLayer mapLayer;
 
-        public bool verifPanneau = false;
+        public bool verifPanneau;
 
         public readonly ScreenManager _screenManager;
         public SpriteBatch SpriteBatch { get; set; }
@@ -72,14 +72,20 @@ namespace RedemysLand
         public Texture2D _textureCase1, _textureCase2, _textureCase3, _textureCase4;
         public Vector2 _positionCase1, _positionCase2, _positionCase3, _positionCase4;
 
-        public float _chronoGame = 500;
+        public float _chronoGame;
         public SpriteFont _police;
         public Vector2 _positionTexte;
 
         public Texture2D _textureTexteIntro;
         public Vector2 _positionTexteIntro;
+        
+        public Texture2D _textureEcranFin;
+        public Vector2 _positionEcranFin;
 
+        public Texture2D _textureExitGameButton;
+        public Vector2 _positionExitGameButton;
 
+        public string AnimCharacter;
 
         public Game1()
         {
@@ -96,6 +102,7 @@ namespace RedemysLand
             _graphics.PreferredBackBufferWidth = 1552; //--jules--Definition de la largeur de l'écran
             _graphics.PreferredBackBufferHeight = 960; //--jules--Definition de la hauteur de l'écran
             _graphics.ApplyChanges(); //--jules--Application des changements de taille
+
             _persoPosition = new Vector2(864, 886);
             _cameraPosition = _persoPosition;
             _positionPanneau = new Vector2(-626, 130);
@@ -113,9 +120,15 @@ namespace RedemysLand
             _positionTexte = new Vector2(1300, 20);
 
             _positionTexteIntro = new Vector2(350, 50);
+            verifPanneau = false;
+
+            _chronoGame = 500;
+
+            _positionEcranFin = new Vector2(-10000, -10000);
+            _positionExitGameButton = new Vector2(-10000, -10000);
 
             GraphicsDevice.BlendState = BlendState.AlphaBlend;
-
+            
             //MENU
             _positionBackground = new Vector2(0, 0); //--jules--Position du fond
             _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo
@@ -136,7 +149,12 @@ namespace RedemysLand
         protected override void LoadContent()
         {
            SpriteBatch = new SpriteBatch(GraphicsDevice);
-
+            /*if (_chronoGame > 30)
+            {
+                AnimCharacter = "motw.sf";
+            }
+            else
+                AnimCharacter = "motw_health";*/
             // TODO: use this.Content to load your game content here
             SpriteSheet spriteSheet = Content.Load<SpriteSheet>("motw.sf", new JsonContentLoader());
             _perso = new AnimatedSprite(spriteSheet);
@@ -155,6 +173,8 @@ namespace RedemysLand
             _textureCase4 = Content.Load<Texture2D>("case4");
 
             _textureTexteIntro = Content.Load<Texture2D>("parchemin");
+            _textureEcranFin = Content.Load<Texture2D>("ecran_fin");
+            _textureExitGameButton = Content.Load<Texture2D>("reset_button");
 
             _police = Content.Load<SpriteFont>("Arial");
 
@@ -167,8 +187,8 @@ namespace RedemysLand
             _textureExitButton = Content.Load<Texture2D>("exit_button"); //--jules--Chargement texture du bouton de sortie
             _backMusic = Content.Load<Song>("back_music"); //--jules--Chargement du fichier audio de la musique de fond du menu
             _clickButton = Content.Load<SoundEffect>("click_button"); //--jules--Chargement du fichier audio de la musique de fond du menu
-            MediaPlayer.Play(_backMusic); //--jules--Démarrage de la musique de fond
-            MediaPlayer.IsRepeating = true; //--jules--Répétition de la musique
+            //MediaPlayer.Play(_backMusic); //--jules--Démarrage de la musique de fond
+            //MediaPlayer.IsRepeating = true; //--jules--Répétition de la musique
             _textureCloseButton = Content.Load<Texture2D>("close"); //--jules--Chargement du bouton fermer
             _textureOngletMenuQuitter = Content.Load<Texture2D>("back_onglet_menu"); //--jules--Chargement du bouton fermer
             _textureOui = Content.Load<Texture2D>("Yes"); //--jules--Chargement du bouton fermer
@@ -305,6 +325,7 @@ namespace RedemysLand
             
             else if (rBoutonClose.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed) //--jules--config bouton fermer
             {
+                _clickButton.Play();
                 _positionTexteIntro = new Vector2(-10000, -10000);
                 _positionCloseButton = new Vector2(-10000, -10000);
             }
@@ -360,16 +381,8 @@ namespace RedemysLand
                 ushort y = (ushort)(_persoPosition.Y / _tiledMap.TileHeight);
                 Console.WriteLine(mapLayer.GetTile(x, y).GlobalIdentifier);
 
-                if (mapLayer.GetTile(x, y).GlobalIdentifier == 881)
-                    verifPanneau = true;
-                else
-                    verifPanneau = false;
-                if (_positionPanneau.X > -626 && verifPanneau == false)
-                {
-                    _positionPanneau.X = _positionPanneau.X - 40;
-                }
 
-                else if (mapLayer.GetTile(x, y).GlobalIdentifier == 566)
+                if (mapLayer.GetTile(x, y).GlobalIdentifier == 566)
                 {
                     LoadScreenSmallHouse();
                 }
@@ -386,7 +399,17 @@ namespace RedemysLand
 
                 else if (mapLayer.GetTile(x, y).GlobalIdentifier == 881 && _positionPanneau.X < -66)
                 {
+                    verifPanneau = true;
                     _positionPanneau.X = _positionPanneau.X + 40;
+                }
+                else if (mapLayer.GetTile(x, y).GlobalIdentifier == 881)
+                    verifPanneau = true;
+                else
+                    verifPanneau = false;
+
+                if (_positionPanneau.X > -626 && verifPanneau == false)
+                {
+                    _positionPanneau.X = _positionPanneau.X - 40;
                 }
 
                 _chronoGame -= deltaSeconds;
@@ -401,14 +424,24 @@ namespace RedemysLand
                     _positionCoeur3 = new Vector2(-10000, -10000);
                 if (_chronoGame < 100)
                     _positionCoeur2 = new Vector2(-10000, -10000);
+                
+                    
                 if (_chronoGame < 0)
-                    _positionCoeur1 = new Vector2(-10000, -10000);
+                {
+                    _positionEcranFin = new Vector2(0, 0);
+                    _positionExitGameButton = new Vector2(630, 750);
+                }
 
+                
 
+                Rectangle rReset = new Rectangle((int)_positionExitGameButton.X, (int)_positionExitGameButton.Y, _textureExitGameButton.Width, _textureExitGameButton.Height); //--jules--HitBox bouton fermer
+                if (rReset.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed)
+                {
+                    _clickButton.Play();
+                    Exit();
+                }
+                Console.WriteLine("Personage Position Position : " + _persoPosition.X + "," + _persoPosition.Y);
 
-                Console.WriteLine("_positionPanneau Position : " + _positionPanneau.X + "," + _positionPanneau.Y);
-                Console.WriteLine(_persoPosition.X + "," + _persoPosition.Y);
-                Console.WriteLine(_graphics.PreferredBackBufferHeight);
                 
                 //GAME=============================================================
 
@@ -436,9 +469,10 @@ namespace RedemysLand
             SpriteBatch.Draw(_textureCase2, _positionCase2, Color.White);
             SpriteBatch.Draw(_textureCase3, _positionCase3, Color.White);
             SpriteBatch.Draw(_textureCase4, _positionCase4, Color.White);
-            SpriteBatch.Draw(_texturePanneau, _positionPanneau, Color.White);
             SpriteBatch.DrawString(_police, "" + Math.Round(_chronoGame) + "", _positionTexte, Color.White);
             SpriteBatch.Draw(_textureTexteIntro, _positionTexteIntro, Color.White);
+            SpriteBatch.Draw(_textureEcranFin, _positionEcranFin, Color.White);
+            SpriteBatch.Draw(_textureExitGameButton, _positionExitGameButton, Color.White);
 
             //MENU
             SpriteBatch.Draw(_textureBackground, _positionBackground, Color.White); //--jules--affichage fond du menu
@@ -449,6 +483,7 @@ namespace RedemysLand
             SpriteBatch.Draw(_textureOngletMenuQuitter, _positionOngletMenuQuitter, Color.White); //--jules--affichage du bouton fermer 
             SpriteBatch.Draw(_textureOui, _positionOui, Color.White); //--jules--affichage du bouton fermer 
             SpriteBatch.Draw(_textureNon, _positionNon, Color.White); //--jules--affichage du bouton fermer 
+            SpriteBatch.Draw(_texturePanneau, _positionPanneau, Color.White);
             SpriteBatch.End();
             base.Draw(gameTime);
         }

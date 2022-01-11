@@ -198,6 +198,18 @@
 /processorParam:TextureFormat=Color
 /build:coeur5.png
 
+#begin ecran_fin.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:ecran_fin.png
+
 #begin exit_button.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -244,6 +256,18 @@
 /processorParam:TextureFormat=Color
 /build:motw.png
 
+#begin motw_health.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:motw_health.png
+
 #begin No.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -279,6 +303,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:parchemin.png
+
+#begin reset_button.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:reset_button.png
 
 #begin setting_button.png
 /importer:TextureImporter
