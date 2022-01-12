@@ -256,7 +256,7 @@
 /processorParam:TextureFormat=Color
 /build:motw.png
 
-#begin motw_health.png
+#begin motw.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -266,7 +266,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:motw_health.png
+/build:motw.png
 
 #begin No.png
 /importer:TextureImporter

@@ -124,3 +124,76 @@ C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcore
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\ecran_fin.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\reset_button.xnb
 C:\Users\jules\Desktop\SAE\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\motw_health.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\click_button.ogg
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\texte_intro.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\motw.sf
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\panneau_porte_ferme.png
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\Arial.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\background_menu.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\back_music.ogg
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\back_music.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\back_onglet_menu.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\back_onglet_parametre.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\bedroom.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\case1.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\case2.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\case3.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\case4.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\click_button.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\close.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\coeur1.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\coeur2.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\coeur3.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\coeur4.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\coeur5.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\ecran_fin.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\exit_button.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\grotte.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\interior_0.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\interior_1.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\logo.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\map.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\motw.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\No.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\panneau_porte_ferme.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\parchemin.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\reset_button.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\setting_button.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\small_house.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\start_button.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\tall_house.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\tilset_0.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\yes.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Redemy's Land.exe
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Redemy's Land.deps.json
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Redemy's Land.runtimeconfig.json
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Redemy's Land.runtimeconfig.dev.json
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Redemy's Land.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Redemy's Land.pdb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\MonoGame.Extended.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\MonoGame.Extended.Animations.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\MonoGame.Extended.Collisions.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\MonoGame.Extended.Graphics.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\MonoGame.Extended.Input.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\MonoGame.Extended.SceneGraphs.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\MonoGame.Extended.Tiled.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\runtimes\osx\native\libSDL2-2.0.0.dylib
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\runtimes\osx\native\libopenal.1.dylib
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\SDL2.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\soft_oal.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SDL2.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\soft_oal.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.csproj.AssemblyReference.cache
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.AssemblyInfoInputs.cache
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.AssemblyInfo.cs
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.csproj.CoreCompileInputs.cache
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.csproj.CopyComplete
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.dll
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.pdb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.genruntimeconfig.cache

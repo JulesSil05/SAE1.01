@@ -626,11 +626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\Redemy's Land\\Redemy's Land\\Redemy's Land.csproj",
+      "projectUniqueName": "C:\\Users\\jules\\Desktop\\Remedy's land\\SAE1.01\\Redemy's Land\\Redemy's Land\\Redemy's Land.csproj",
       "projectName": "Redemy's Land",
-      "projectPath": "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\Redemy's Land\\Redemy's Land\\Redemy's Land.csproj",
+      "projectPath": "C:\\Users\\jules\\Desktop\\Remedy's land\\SAE1.01\\Redemy's Land\\Redemy's Land\\Redemy's Land.csproj",
       "packagesPath": "C:\\Users\\jules\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jules\\Desktop\\SAE\\SAE1.01\\Redemy's Land\\Redemy's Land\\obj\\",
+      "outputPath": "C:\\Users\\jules\\Desktop\\Remedy's land\\SAE1.01\\Redemy's Land\\Redemy's Land\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

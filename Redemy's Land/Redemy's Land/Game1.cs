@@ -145,17 +145,9 @@ namespace RedemysLand
             var viewportAdapter = new BoxingViewportAdapter(Window, GraphicsDevice, 600, 360);
             _camera = new OrthographicCamera(viewportAdapter);
         }
-
         protected override void LoadContent()
         {
            SpriteBatch = new SpriteBatch(GraphicsDevice);
-            /*if (_chronoGame > 30)
-            {
-                AnimCharacter = "motw.sf";
-            }
-            else
-                AnimCharacter = "motw_health";*/
-            // TODO: use this.Content to load your game content here
             SpriteSheet spriteSheet = Content.Load<SpriteSheet>("motw.sf", new JsonContentLoader());
             _perso = new AnimatedSprite(spriteSheet);
             _tiledMap = Content.Load<TiledMap>("map");
@@ -274,14 +266,7 @@ namespace RedemysLand
                 _positionCloseButton = new Vector2(980, 150); //--jules--Position du bouton fermer
                 _positionOngletMenuQuitter = new Vector2(10000, 10000); //--jules--Position du bouton fermer
                 _positionOui = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-                _positionNon = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-
-                //====================================
-                //CINEMATIQUE DE LANCEMENT DE LA PARTIE
-                //====================================              
-
-
-                // TODO: Add your update logic here
+                _positionNon = new Vector2(10000, 10000); //--jules--Position du bouton fermer           
             }
             
             
@@ -332,44 +317,87 @@ namespace RedemysLand
             else if (_playButtonClicked == true)
             {
                 //GAME=============================================================
-                
-
                 string animation = "face";
 
-                KeyboardState keyboardState = Keyboard.GetState();
-                if (keyboardState.IsKeyDown(Keys.Z))
+                if (_chronoGame >= 30)
                 {
-                    ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                    ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
-                    animation = "walkNorth";
-                    if (!IsCollision(tx, ty))
+                    animation = "face";
+                    
+
+                    KeyboardState keyboardState = Keyboard.GetState();
+                    if (keyboardState.IsKeyDown(Keys.Z))
                     {
-                        _persoPosition.Y -= walkSpeed; // _persoPosition vecteur position du sprite
+                        ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
+                        animation = "walkNorth";
+                        if (!IsCollision(tx, ty))
+                        {
+                            _persoPosition.Y -= walkSpeed; // _persoPosition vecteur position du sprite
+                        }
+                    }
+                    if (keyboardState.IsKeyDown(Keys.S))
+                    {
+                        ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
+                        animation = "walkSouth";
+                        if (!IsCollision(tx, ty))
+                            _persoPosition.Y += walkSpeed; // _persoPosition vecteur position du sprite
+                    }
+                    if (keyboardState.IsKeyDown(Keys.Q))
+                    {
+                        ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth - 0.5);
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        animation = "walkWest";
+                        if (!IsCollision(tx, ty))
+                            _persoPosition.X -= walkSpeed; // _persoPosition vecteur position du sprite
+                    }
+                    if (keyboardState.IsKeyDown(Keys.D))
+                    {
+                        ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth + 0.6);
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        animation = "walkEast";
+                        if (!IsCollision(tx, ty))
+                            _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
                     }
                 }
-                if (keyboardState.IsKeyDown(Keys.S))
+                else if (_chronoGame < 30)
                 {
-                    ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                    ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
-                    animation = "walkSouth";
-                    if (!IsCollision(tx, ty))
-                        _persoPosition.Y += walkSpeed; // _persoPosition vecteur position du sprite
-                }
-                if (keyboardState.IsKeyDown(Keys.Q))
-                {
-                    ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth - 0.5);
-                    ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
-                    animation = "walkWest";
-                    if (!IsCollision(tx, ty))
-                        _persoPosition.X -= walkSpeed; // _persoPosition vecteur position du sprite
-                }
-                if (keyboardState.IsKeyDown(Keys.D))
-                {
-                    ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth + 0.6);
-                    ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
-                    animation = "walkEast";
-                    if (!IsCollision(tx, ty))
-                        _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
+                    _vitessePerso = 30;
+                    animation = "faceZombie";
+
+                    KeyboardState keyboardState = Keyboard.GetState();
+                    if (keyboardState.IsKeyDown(Keys.Z))
+                    {
+                        ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
+                        animation = "walkNorthZombie";
+                        if (!IsCollision(tx, ty))
+                            _persoPosition.Y -= walkSpeed; // _persoPosition vecteur position du sprite
+                    }
+                    if (keyboardState.IsKeyDown(Keys.S))
+                    {
+                        ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
+                        animation = "walkSouthZombie";
+                        if (!IsCollision(tx, ty))
+                            _persoPosition.Y += walkSpeed; // _persoPosition vecteur position du sprite
+                    }
+                    if (keyboardState.IsKeyDown(Keys.Q))
+                    {
+                        ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth - 0.5);
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        animation = "walkWestZombie";
+                        if (!IsCollision(tx, ty))
+                            _persoPosition.X -= walkSpeed; // _persoPosition vecteur position du sprite
+                    }
+                    if (keyboardState.IsKeyDown(Keys.D))
+                    {
+                        ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth + 0.6);
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        animation = "walkEastZombie";
+                        if (!IsCollision(tx, ty))
+                            _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
+                    }
                 }
                 _perso.Play(animation);
                 _perso.Update(deltaSeconds);

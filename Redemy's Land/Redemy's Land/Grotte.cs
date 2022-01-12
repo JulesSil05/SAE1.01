@@ -39,7 +39,6 @@ namespace RedemysLand
                 _myGame._persoPosition = new Vector2(1112, 292);
             }
         }
-
         public override void Draw(GameTime gameTime)
         {
             _myGame.GraphicsDevice.Clear(Color.Black);
