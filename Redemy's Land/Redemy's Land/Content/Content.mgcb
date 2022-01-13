@@ -198,6 +198,18 @@
 /processorParam:TextureFormat=Color
 /build:coeur5.png
 
+#begin color_tab.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:color_tab.png
+
 #begin ecran_fin.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -243,18 +255,6 @@
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
 /build:map.tmx
-
-#begin motw.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:motw.png
 
 #begin motw.png
 /importer:TextureImporter

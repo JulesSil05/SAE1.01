@@ -14,20 +14,29 @@ using MonoGame.Extended.Screens.Transitions;
 using System.Threading;
 
 namespace RedemysLand
-{
+{    
     public class MapBedroom : GameScreen
     {
+        public Vector2 _positionColorTab;
+        public Texture2D _textureColorTab;
+
         private Game1 _myGame; // pour récupérer le jeu en cours
 
         public MapBedroom(Game1 game) : base(game)
         {
             _myGame = game;
         }
+        public override void Initialize()
+        {
+            _positionColorTab = new Vector2(-10000, -10000);
+            base.Initialize();
+        }
         public override void LoadContent()
         {
             _myGame._tiledMap = Content.Load<TiledMap>("bedroom");
             _myGame._tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _myGame._tiledMap);
             _myGame.mapLayer = _myGame._tiledMap.GetLayer<TiledMapTileLayer>("contraintes");
+            _textureColorTab = Content.Load<Texture2D>("color_tab");
             base.LoadContent();
         }
         public override void Update(GameTime gameTime)
@@ -38,6 +47,15 @@ namespace RedemysLand
             {
                 _myGame.LoadScreenTallHouse();
                 _myGame._persoPosition = new Vector2(263, 30);
+            }
+
+            else if ((_myGame.mapLayer.GetTile(x, y).GlobalIdentifier) == 4951)
+            {
+                _positionColorTab = new Vector2(533, 200);
+            }
+            else
+            {
+                _positionColorTab = new Vector2(-10000, -10000);
             }
         }
         public override void Draw(GameTime gameTime)
@@ -61,6 +79,7 @@ namespace RedemysLand
             _myGame.SpriteBatch.Draw(_myGame._textureCase3, _myGame._positionCase3, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCase4, _myGame._positionCase4, Color.White);
 
+            _myGame.SpriteBatch.Draw(_textureColorTab, _positionColorTab, Color.White);
             _myGame.SpriteBatch.DrawString(_myGame._police, "" + Math.Round(_myGame._chronoGame) + "", _myGame._positionTexte, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureEcranFin, _myGame._positionEcranFin, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureExitGameButton, _myGame._positionExitGameButton, Color.White);
