@@ -198,3 +198,7 @@ C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Deb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.pdb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\obj\Debug\netcoreapp3.1\Redemy's Land.genruntimeconfig.cache
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\color_tab.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\tjd4.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\dialogue_émeraude.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\money_bag.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\emeraude.xnb

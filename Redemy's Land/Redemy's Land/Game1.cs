@@ -78,12 +78,24 @@ namespace RedemysLand
 
         public Texture2D _textureTexteIntro;
         public Vector2 _positionTexteIntro;
-        
+
+        public Texture2D _textureMoneyBag;
+        public Vector2 _positionMoneyBag;
+        public SpriteFont _policePorteMonnaie;
+        public int _valeurPorteMonnaie;
+        public Vector2 _positionPorteMonnaie;
+
         public Texture2D _textureEcranFin;
         public Vector2 _positionEcranFin;
 
         public Texture2D _textureExitGameButton;
         public Vector2 _positionExitGameButton;
+
+        public Texture2D _texturetjd4;
+        public Vector2 _positiontjd4;
+
+        public Texture2D _textureDialoguePnj;
+        public Vector2 _positionDialoguePnj;
 
         public string AnimCharacter;
 
@@ -118,6 +130,8 @@ namespace RedemysLand
             _positionCase4 = new Vector2(890, 850);
 
             _positionTexte = new Vector2(1300, 20);
+            _positionMoneyBag = new Vector2(1280, 150);
+            _positionPorteMonnaie = new Vector2(1400, 150);
 
             _positionTexteIntro = new Vector2(350, 50);
             verifPanneau = false;
@@ -126,6 +140,9 @@ namespace RedemysLand
 
             _positionEcranFin = new Vector2(-10000, -10000);
             _positionExitGameButton = new Vector2(-10000, -10000);
+
+            _positiontjd4 = new Vector2(-10000, -10000);
+            _positionDialoguePnj = new Vector2(-10000, -10000);
 
             GraphicsDevice.BlendState = BlendState.AlphaBlend;
             
@@ -139,6 +156,7 @@ namespace RedemysLand
             _positionOui = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
             _positionNon = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
             _playButtonClicked = false;
+            _valeurPorteMonnaie = 0;
 
             base.Initialize();
 
@@ -167,8 +185,14 @@ namespace RedemysLand
             _textureTexteIntro = Content.Load<Texture2D>("parchemin");
             _textureEcranFin = Content.Load<Texture2D>("ecran_fin");
             _textureExitGameButton = Content.Load<Texture2D>("reset_button");
+            _textureMoneyBag = Content.Load<Texture2D>("money_bag");
 
             _police = Content.Load<SpriteFont>("Arial");
+
+            _policePorteMonnaie = Content.Load<SpriteFont>("Arial");
+
+            _texturetjd4 = Content.Load<Texture2D>("tjd4");
+            _textureDialoguePnj = Content.Load<Texture2D>("dialogue_émeraude");
 
             mapLayer = _tiledMap.GetLayer<TiledMapTileLayer>("contraintes");
 
@@ -179,13 +203,12 @@ namespace RedemysLand
             _textureExitButton = Content.Load<Texture2D>("exit_button"); //--jules--Chargement texture du bouton de sortie
             _backMusic = Content.Load<Song>("back_music"); //--jules--Chargement du fichier audio de la musique de fond du menu
             _clickButton = Content.Load<SoundEffect>("click_button"); //--jules--Chargement du fichier audio de la musique de fond du menu
-            //MediaPlayer.Play(_backMusic); //--jules--Démarrage de la musique de fond
-            //MediaPlayer.IsRepeating = true; //--jules--Répétition de la musique
+            MediaPlayer.Play(_backMusic); //--jules--Démarrage de la musique de fond
+            MediaPlayer.IsRepeating = true; //--jules--Répétition de la musique
             _textureCloseButton = Content.Load<Texture2D>("close"); //--jules--Chargement du bouton fermer
             _textureOngletMenuQuitter = Content.Load<Texture2D>("back_onglet_menu"); //--jules--Chargement du bouton fermer
             _textureOui = Content.Load<Texture2D>("Yes"); //--jules--Chargement du bouton fermer
             _textureNon = Content.Load<Texture2D>("No"); //--jules--Chargement du bouton fermer
-
         }
 
         private void MoveCamera(GameTime gameTime)
@@ -302,8 +325,7 @@ namespace RedemysLand
                     _positionNon = new Vector2(10000, 10000); //--jules--Position du menu quitter
                     _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
                     _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
-                    _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo
-                   
+                    _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo                   
                 }
             }
 
@@ -314,6 +336,7 @@ namespace RedemysLand
                 _positionTexteIntro = new Vector2(-10000, -10000);
                 _positionCloseButton = new Vector2(-10000, -10000);
             }
+            
             else if (_playButtonClicked == true)
             {
                 //GAME=============================================================
@@ -399,9 +422,7 @@ namespace RedemysLand
                             _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
                     }
                 }
-                _perso.Play(animation);
-                _perso.Update(deltaSeconds);
-                _tiledMapRenderer.Update(gameTime);
+                
 
                 MoveCamera(gameTime);
                 _camera.LookAt(_cameraPosition);
@@ -460,7 +481,23 @@ namespace RedemysLand
                     _positionExitGameButton = new Vector2(630, 750);
                 }
 
-                
+                if(_persoPosition.X >= 407 && _persoPosition.X <= 430 && _persoPosition.Y >= 1190 && _persoPosition.Y <= 1200)
+                {
+                    _positiontjd4 = new Vector2(394, 1145);
+                }
+                else
+                    _positiontjd4 = new Vector2(-10000, -10000);
+
+                if (_persoPosition.X >= 1174 && _persoPosition.X <= 1191 && _persoPosition.Y >= 1084 && _persoPosition.Y <= 1122)
+                {
+                    _positionDialoguePnj = new Vector2(1158, 990);
+                }
+                else
+                    _positionDialoguePnj = new Vector2(-10000, -10000);
+
+                _perso.Play(animation);
+                _perso.Update(deltaSeconds);
+                _tiledMapRenderer.Update(gameTime);
 
                 Rectangle rReset = new Rectangle((int)_positionExitGameButton.X, (int)_positionExitGameButton.Y, _textureExitGameButton.Width, _textureExitGameButton.Height); //--jules--HitBox bouton fermer
                 if (rReset.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed)
@@ -485,6 +522,8 @@ namespace RedemysLand
             var transformMatrix = _camera.GetViewMatrix();
             SpriteBatch.Begin(transformMatrix: transformMatrix);
             SpriteBatch.Draw(_perso, _persoPosition);
+            SpriteBatch.Draw(_texturetjd4, _positiontjd4, Color.White);
+            SpriteBatch.Draw(_textureDialoguePnj, _positionDialoguePnj, Color.White);
             _tiledMapRenderer.Draw(_camera.GetViewMatrix());
             SpriteBatch.End();
             SpriteBatch.Begin();
@@ -498,9 +537,11 @@ namespace RedemysLand
             SpriteBatch.Draw(_textureCase3, _positionCase3, Color.White);
             SpriteBatch.Draw(_textureCase4, _positionCase4, Color.White);
             SpriteBatch.DrawString(_police, "" + Math.Round(_chronoGame) + "", _positionTexte, Color.White);
+            SpriteBatch.DrawString(_policePorteMonnaie, "" + _valeurPorteMonnaie + "", _positionPorteMonnaie, Color.White);
             SpriteBatch.Draw(_textureTexteIntro, _positionTexteIntro, Color.White);
             SpriteBatch.Draw(_textureEcranFin, _positionEcranFin, Color.White);
             SpriteBatch.Draw(_textureExitGameButton, _positionExitGameButton, Color.White);
+            SpriteBatch.Draw(_textureMoneyBag, _positionMoneyBag, Color.White);
 
             //MENU
             SpriteBatch.Draw(_textureBackground, _positionBackground, Color.White); //--jules--affichage fond du menu
