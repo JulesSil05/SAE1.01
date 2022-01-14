@@ -19,7 +19,7 @@ namespace RedemysLand
     {
         private Texture2D _textureEmeraude;
         private Vector2 _positionEmeraude;
-        private bool _pierreRamassee;
+        
         private Game1 _myGame; // pour récupérer le jeu en cours
 
         public Grotte(Game1 game) : base(game)
@@ -29,13 +29,13 @@ namespace RedemysLand
         public override void Initialize()
         {
             _positionEmeraude = new Vector2(126,742);
-            _pierreRamassee = false;
+            
+            _textureEmeraude = Content.Load<Texture2D>("emeraude");
             base.Initialize();
         }
         public override void LoadContent()
         {
-            _myGame._tiledMap = Content.Load<TiledMap>("grotte");
-            _textureEmeraude = Content.Load<Texture2D>("emeraude");
+            _myGame._tiledMap = Content.Load<TiledMap>("grotte");            
             _myGame._tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _myGame._tiledMap);
             _myGame.mapLayer = _myGame._tiledMap.GetLayer<TiledMapTileLayer>("contraintes");
 
@@ -49,11 +49,18 @@ namespace RedemysLand
                 _myGame.LoadScreenMap();
                 _myGame._persoPosition = new Vector2(1112, 292);
             }
-            if (_myGame._persoPosition.X >= 114 && _myGame._persoPosition.X <= 128 && _myGame._persoPosition.Y >= 731 && _myGame._persoPosition.Y <= 743 || _pierreRamassee == true)
+            if (_myGame._argentRecu == true)
             {
-                _pierreRamassee = true;
+                _myGame._textureCase4 = Content.Load<Texture2D>("case4");
                 _positionEmeraude = new Vector2(-10000, -10000);
             }
+            else if (_myGame._persoPosition.X >= 114 && _myGame._persoPosition.X <= 128 && _myGame._persoPosition.Y >= 731 && _myGame._persoPosition.Y <= 743 || _myGame._emeraudeRamassee == true)
+            {
+                _myGame._emeraudeRamassee = true;
+                _positionEmeraude = new Vector2(-10000, -10000);
+                _myGame._textureCase4 = Content.Load<Texture2D>("case4ramasse");
+            }
+            
             else
                 _positionEmeraude = new Vector2(115, 740);
 
@@ -79,6 +86,8 @@ namespace RedemysLand
             _myGame.SpriteBatch.Draw(_myGame._textureCase2, _myGame._positionCase2, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCase3, _myGame._positionCase3, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCase4, _myGame._positionCase4, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCase5, _myGame._positionCase5, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCase6, _myGame._positionCase6, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureMoneyBag, _myGame._positionMoneyBag, Color.White);
             _myGame.SpriteBatch.DrawString(_myGame._police, "" + Math.Round(_myGame._chronoGame) + "", _myGame._positionTexte, Color.White);
             _myGame.SpriteBatch.DrawString(_myGame._policePorteMonnaie, "" + _myGame._valeurPorteMonnaie + "", _myGame._positionPorteMonnaie, Color.White);

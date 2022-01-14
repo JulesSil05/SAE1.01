@@ -17,9 +17,10 @@ namespace RedemysLand
 {
     public class Game1 : Game
     {
-
         //MENU
         private GraphicsDeviceManager _graphics;
+
+        public KeyboardState keyboardState = Keyboard.GetState();
 
         private Texture2D _textureBackground; //--jules--Definition texture de fond
         private Vector2 _positionBackground; //--jules--Definition position de fond
@@ -53,7 +54,7 @@ namespace RedemysLand
         public AnimatedSprite _perso;
         public TiledMap _tiledMap;
         public TiledMapRenderer _tiledMapRenderer;
-        private int _vitessePerso = 60;
+        private int _vitessePerso = 100;
 
         public OrthographicCamera _camera;
         public Vector2 _cameraPosition;
@@ -69,8 +70,8 @@ namespace RedemysLand
         public Vector2 _positionPanneau;
         public Texture2D _textureCoeur1, _textureCoeur2, _textureCoeur3, _textureCoeur4, _textureCoeur5;
         public Vector2 _positionCoeur1, _positionCoeur2, _positionCoeur3, _positionCoeur4, _positionCoeur5;
-        public Texture2D _textureCase1, _textureCase2, _textureCase3, _textureCase4;
-        public Vector2 _positionCase1, _positionCase2, _positionCase3, _positionCase4;
+        public Texture2D _textureCase1, _textureCase2, _textureCase3, _textureCase4, _textureCase5, _textureCase6;
+        public Vector2 _positionCase1, _positionCase2, _positionCase3, _positionCase4, _positionCase5, _positionCase6;
 
         public float _chronoGame;
         public SpriteFont _police;
@@ -97,7 +98,15 @@ namespace RedemysLand
         public Texture2D _textureDialoguePnj;
         public Vector2 _positionDialoguePnj;
 
+        public Texture2D _textureFioleShop, _textureArbreShop, _textureChestKey;
+        public Vector2 _positionFioleShop, _positionArbreShop, _positionChestKey;
+
+
         public string AnimCharacter;
+
+        public bool _emeraudeRamassee = false;
+        public bool _argentRecu = false;
+        public bool _achatMagasin = false;
 
         public Game1()
         {
@@ -124,10 +133,12 @@ namespace RedemysLand
             _positionCoeur4 = new Vector2(380, 10);
             _positionCoeur5 = new Vector2(500, 10);
 
-            _positionCase1 = new Vector2(530, 850);
-            _positionCase2 = new Vector2(650, 850);
-            _positionCase3 = new Vector2(770, 850);
-            _positionCase4 = new Vector2(890, 850);
+            _positionCase1 = new Vector2(20, 600);
+            _positionCase2 = new Vector2(20, 700);
+            _positionCase3 = new Vector2(20, 800);
+            _positionCase4 = new Vector2(1400, 600);
+            _positionCase5 = new Vector2(1400, 700);
+            _positionCase6 = new Vector2(1400, 800);
 
             _positionTexte = new Vector2(1300, 20);
             _positionMoneyBag = new Vector2(1280, 150);
@@ -157,6 +168,9 @@ namespace RedemysLand
             _positionNon = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
             _playButtonClicked = false;
             _valeurPorteMonnaie = 0;
+            _positionFioleShop = new Vector2(-10000, -10000);
+            _positionArbreShop = new Vector2(-10000, -10000);
+            _positionChestKey = new Vector2(457, 783);
 
             base.Initialize();
 
@@ -171,16 +185,22 @@ namespace RedemysLand
             _tiledMap = Content.Load<TiledMap>("map");
             _texturePanneau = Content.Load<Texture2D>("panneau_porte_ferme");
             _tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _tiledMap);
-            _textureCoeur1 = Content.Load<Texture2D>("coeur1");
-            _textureCoeur2 = Content.Load<Texture2D>("coeur2");
-            _textureCoeur3 = Content.Load<Texture2D>("coeur3");
-            _textureCoeur4 = Content.Load<Texture2D>("coeur4");
-            _textureCoeur5 = Content.Load<Texture2D>("coeur5");
+            _textureCoeur1 = Content.Load<Texture2D>("coeur");
+            _textureCoeur2 = Content.Load<Texture2D>("coeur");
+            _textureCoeur3 = Content.Load<Texture2D>("coeur");
+            _textureCoeur4 = Content.Load<Texture2D>("coeur");
+            _textureCoeur5 = Content.Load<Texture2D>("coeur");
 
             _textureCase1 = Content.Load<Texture2D>("case1");
             _textureCase2 = Content.Load<Texture2D>("case2");
             _textureCase3 = Content.Load<Texture2D>("case3");
             _textureCase4 = Content.Load<Texture2D>("case4");
+            _textureCase5 = Content.Load<Texture2D>("case5");
+            _textureCase6 = Content.Load<Texture2D>("case6");
+
+            _textureFioleShop = Content.Load<Texture2D>("fiole_shop");
+            _textureArbreShop = Content.Load<Texture2D>("arbre_shop");
+            _textureChestKey = Content.Load<Texture2D>("key");
 
             _textureTexteIntro = Content.Load<Texture2D>("parchemin");
             _textureEcranFin = Content.Load<Texture2D>("ecran_fin");
@@ -218,7 +238,6 @@ namespace RedemysLand
 
         private bool IsCollision(ushort x, ushort y)
         {
-
             TiledMapTile? tile;
             if (mapLayer.TryGetTile(x, y, out tile) == false)
                 return false;
@@ -258,9 +277,7 @@ namespace RedemysLand
         {
             //MENU=============================================================
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-        
+                Exit();        
 
             float deltaSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float walkSpeed = deltaSeconds * _vitessePerso;
@@ -344,8 +361,7 @@ namespace RedemysLand
 
                 if (_chronoGame >= 30)
                 {
-                    animation = "face";
-                    
+                    animation = "face";                    
 
                     KeyboardState keyboardState = Keyboard.GetState();
                     if (keyboardState.IsKeyDown(Keys.Z))
@@ -388,7 +404,7 @@ namespace RedemysLand
                     _vitessePerso = 30;
                     animation = "faceZombie";
 
-                    KeyboardState keyboardState = Keyboard.GetState();
+                    
                     if (keyboardState.IsKeyDown(Keys.Z))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
@@ -453,8 +469,18 @@ namespace RedemysLand
                 }
                 else if (mapLayer.GetTile(x, y).GlobalIdentifier == 881)
                     verifPanneau = true;
-                else
+                else if (mapLayer.GetTile(x, y).GlobalIdentifier != 881 && verifPanneau == true)
                     verifPanneau = false;
+                else if (mapLayer.GetTile(x, y).GlobalIdentifier == 3137 && _achatMagasin == false)
+                {
+                    _positionFioleShop = new Vector2(250, 300);
+                    _positionArbreShop = new Vector2(1000, 300);
+                }
+                else if (mapLayer.GetTile(x, y).GlobalIdentifier != 3137)
+                {
+                    _positionFioleShop = new Vector2(-10000, -10000);
+                    _positionArbreShop = new Vector2(-10000, -10000);
+                }
 
                 if (_positionPanneau.X > -626 && verifPanneau == false)
                 {
@@ -474,7 +500,7 @@ namespace RedemysLand
                 if (_chronoGame < 100)
                     _positionCoeur2 = new Vector2(-10000, -10000);
                 
-                    
+
                 if (_chronoGame < 0)
                 {
                     _positionEcranFin = new Vector2(0, 0);
@@ -488,12 +514,61 @@ namespace RedemysLand
                 else
                     _positiontjd4 = new Vector2(-10000, -10000);
 
-                if (_persoPosition.X >= 1174 && _persoPosition.X <= 1191 && _persoPosition.Y >= 1084 && _persoPosition.Y <= 1122)
+
+
+                //emeraude
+                if (_persoPosition.X >= 1174 && _persoPosition.X <= 1191 && _persoPosition.Y >= 1084 && _persoPosition.Y <= 1122 && _emeraudeRamassee == true && _argentRecu == false)
+                {
+                    _argentRecu = true;
+                    _valeurPorteMonnaie = _valeurPorteMonnaie + 100;
+                    
+                    _positionDialoguePnj = new Vector2(-10000, -10000);
+                }
+
+                else if (_persoPosition.X >= 1174 && _persoPosition.X <= 1191 && _persoPosition.Y >= 1084 && _persoPosition.Y <= 1122 && _argentRecu == false)
                 {
                     _positionDialoguePnj = new Vector2(1158, 990);
                 }
+
+                else if (_argentRecu == true)
+                {
+                    _textureCase4 = Content.Load<Texture2D>("case4");
+                }
+
                 else
+                {
                     _positionDialoguePnj = new Vector2(-10000, -10000);
+                }
+
+                //clé coffre
+
+
+
+                //shop
+                Rectangle rShopFiole = new Rectangle((int)_positionFioleShop.X, (int)_positionFioleShop.Y, _textureFioleShop.Width, _textureFioleShop.Height); //--jules--HitBox bouton fermer
+                if (rShopFiole.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed && _valeurPorteMonnaie == 100)
+                {
+                    _textureCase4 = Content.Load<Texture2D>("case3ramasse");
+                    _valeurPorteMonnaie = _valeurPorteMonnaie - 100;
+                    _positionFioleShop = new Vector2(-10000, -10000);
+                    _positionArbreShop = new Vector2(-10000, -10000);
+                    _achatMagasin = true;
+                    _clickButton.Play();
+                }
+                Rectangle rShopArbre = new Rectangle((int)_positionArbreShop.X, (int)_positionArbreShop.Y, _textureArbreShop.Width, _textureArbreShop.Height); //--jules--HitBox bouton fermer
+                if (rShopArbre.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed && _valeurPorteMonnaie == 100)
+                {
+                    _valeurPorteMonnaie = _valeurPorteMonnaie - 100;
+                    _positionFioleShop = new Vector2(-10000, -10000);
+                    _positionArbreShop = new Vector2(-10000, -10000);
+                    _achatMagasin = true;
+                    _clickButton.Play();
+                }
+
+                if (_achatMagasin == true)
+                {
+                    _textureCase3 = Content.Load<Texture2D>("case3ramasse");
+                }  
 
                 _perso.Play(animation);
                 _perso.Update(deltaSeconds);
@@ -521,6 +596,7 @@ namespace RedemysLand
             // TODO: Add your drawing code here
             var transformMatrix = _camera.GetViewMatrix();
             SpriteBatch.Begin(transformMatrix: transformMatrix);
+            SpriteBatch.Draw(_textureChestKey, _positionChestKey, Color.White);
             SpriteBatch.Draw(_perso, _persoPosition);
             SpriteBatch.Draw(_texturetjd4, _positiontjd4, Color.White);
             SpriteBatch.Draw(_textureDialoguePnj, _positionDialoguePnj, Color.White);
@@ -532,10 +608,14 @@ namespace RedemysLand
             SpriteBatch.Draw(_textureCoeur3, _positionCoeur3, Color.White);
             SpriteBatch.Draw(_textureCoeur4, _positionCoeur4, Color.White);
             SpriteBatch.Draw(_textureCoeur5, _positionCoeur5, Color.White);
+
             SpriteBatch.Draw(_textureCase1, _positionCase1, Color.White);
             SpriteBatch.Draw(_textureCase2, _positionCase2, Color.White);
             SpriteBatch.Draw(_textureCase3, _positionCase3, Color.White);
             SpriteBatch.Draw(_textureCase4, _positionCase4, Color.White);
+            SpriteBatch.Draw(_textureCase5, _positionCase5, Color.White);
+            SpriteBatch.Draw(_textureCase6, _positionCase6, Color.White);
+
             SpriteBatch.DrawString(_police, "" + Math.Round(_chronoGame) + "", _positionTexte, Color.White);
             SpriteBatch.DrawString(_policePorteMonnaie, "" + _valeurPorteMonnaie + "", _positionPorteMonnaie, Color.White);
             SpriteBatch.Draw(_textureTexteIntro, _positionTexteIntro, Color.White);
@@ -553,6 +633,9 @@ namespace RedemysLand
             SpriteBatch.Draw(_textureOui, _positionOui, Color.White); //--jules--affichage du bouton fermer 
             SpriteBatch.Draw(_textureNon, _positionNon, Color.White); //--jules--affichage du bouton fermer 
             SpriteBatch.Draw(_texturePanneau, _positionPanneau, Color.White);
+            SpriteBatch.Draw(_textureFioleShop, _positionFioleShop, Color.White);
+            SpriteBatch.Draw(_textureArbreShop, _positionArbreShop, Color.White);
+            
             SpriteBatch.End();
             base.Draw(gameTime);
         }
