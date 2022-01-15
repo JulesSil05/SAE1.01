@@ -84,6 +84,18 @@
 /processor:TiledMapProcessor
 /build:bedroom.tmx
 
+#begin blue_apple.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:blue_apple.png
+
 #begin case1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -107,6 +119,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:case1ramasse.png
+
+#begin case1ramasseBlue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:case1ramasseBlue.png
 
 #begin case2.png
 /importer:TextureImporter
@@ -354,6 +378,11 @@
 /processorParam:TextureFormat=Color
 /build:fiole_shop.png
 
+#begin fondGrotte.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:fondGrotte.tmx
+
 #begin grotte.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
@@ -448,6 +477,30 @@
 /processorParam:TextureFormat=Color
 /build:parchemin.png
 
+#begin plante.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:plante.png
+
+#begin red_apple.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:red_apple.png
+
 #begin reset_button.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -505,6 +558,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:tjd4.png
+
+#begin victoire.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:victoire.png
 
 #begin yes.png
 /importer:TextureImporter

@@ -64,6 +64,14 @@ namespace RedemysLand
             else
                 _positionEmeraude = new Vector2(115, 740);
 
+            ushort x = (ushort)(_myGame._persoPosition.X / _myGame._tiledMap.TileWidth);
+            ushort y = (ushort)(_myGame._persoPosition.Y / _myGame._tiledMap.TileHeight);
+
+            if ((_myGame.mapLayer.GetTile(x, y).GlobalIdentifier) == 1779 )
+            {
+                _myGame.LoadScreenFondGrotte();
+                _myGame._persoPosition = new Vector2(130, 166);
+            }
         }
         public override void Draw(GameTime gameTime)
         {

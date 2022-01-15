@@ -18,6 +18,8 @@ namespace RedemysLand
     public class MapSmallHouse : GameScreen
     {
         private Game1 _myGame; // pour récupérer le jeu en cours
+        private Texture2D _texturePlante;
+        private Vector2 _positionPlante = new Vector2 (178, 60);
 
         public MapSmallHouse(Game1 game) : base(game)
         {
@@ -28,6 +30,7 @@ namespace RedemysLand
             _myGame._tiledMap = Content.Load<TiledMap>("small_house");
             _myGame._tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _myGame._tiledMap);
             _myGame.mapLayer = _myGame._tiledMap.GetLayer<TiledMapTileLayer>("contraintes");
+            _texturePlante = Content.Load<Texture2D>("plante");
             base.LoadContent();
         }
         public override void Update(GameTime gameTime)
@@ -37,6 +40,24 @@ namespace RedemysLand
                 _myGame.LoadScreenMap();
                 _myGame._persoPosition = new Vector2(695, 1185);
             }
+
+
+            if (_myGame._planteRamassee == true)
+            {
+                _myGame._textureCase2 = Content.Load<Texture2D>("case2ramasse");
+                _positionPlante = new Vector2(-10000, -10000);
+            }
+            else if (_myGame._persoPosition.X >= 183 && _myGame._persoPosition.X <= 193 && _myGame._persoPosition.Y >= 55 && _myGame._persoPosition.Y <= 65 || _myGame._planteRamassee == true)
+            {
+                _myGame._planteRamassee = true;
+                _positionPlante = new Vector2(-10000, -10000);
+                _myGame._textureCase2 = Content.Load<Texture2D>("case2ramasse");
+            }
+            else
+            {
+                _positionPlante = new Vector2(178, 60);
+                _myGame._textureCase2 = Content.Load<Texture2D>("case2");
+            }
         }
         public override void Draw(GameTime gameTime)
         {
@@ -44,6 +65,7 @@ namespace RedemysLand
             var transformMatrix = _myGame._camera.GetViewMatrix();
 
             _myGame.SpriteBatch.Begin(transformMatrix: transformMatrix);
+            _myGame.SpriteBatch.Draw(_texturePlante, _positionPlante, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
             _myGame._tiledMapRenderer.Draw(_myGame._camera.GetViewMatrix());
             _myGame.SpriteBatch.End();

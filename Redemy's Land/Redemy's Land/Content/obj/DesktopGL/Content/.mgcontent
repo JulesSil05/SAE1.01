@@ -11,8 +11,10 @@
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/back_onglet_parametre.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/background_menu.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/bedroom.tmx</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/blue_apple.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/case1.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/case1ramasse.png</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/case1ramasseBlue.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/case2.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/case2ramasse.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/case3.png</File>
@@ -34,6 +36,7 @@
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/emeraude.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/exit_button.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/fiole_shop.png</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/fondGrotte.tmx</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/grotte.tmx</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/key.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/logo.png</File>
@@ -43,15 +46,24 @@
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/No.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/panneau_porte_ferme.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/parchemin.png</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/plante.png</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/red_apple.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/reset_button.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/setting_button.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/small_house.tmx</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/start_button.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/tall_house.tmx</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/tjd4.png</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/victoire.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/yes.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

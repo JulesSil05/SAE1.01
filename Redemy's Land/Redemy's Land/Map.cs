@@ -41,12 +41,15 @@ namespace RedemysLand
 
             _myGame.SpriteBatch.Begin(transformMatrix: transformMatrix);
             _myGame.SpriteBatch.Draw(_myGame._textureChestKey, _myGame._positionChestKey, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureCoffre, _myGame._positionCoffre, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureChestKey, _myGame._positionChestKey, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
             _myGame._tiledMapRenderer.Draw(_myGame._camera.GetViewMatrix());
             _myGame.SpriteBatch.Draw(_myGame._texturetjd4, _myGame._positiontjd4, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureDialoguePnj, _myGame._positionDialoguePnj, Color.White);
             _myGame.SpriteBatch.End();
             _myGame.SpriteBatch.Begin();
+            _myGame.SpriteBatch.Draw(_myGame._textureVictoire, _myGame._positionVictoire, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCoeur1, _myGame._positionCoeur1, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCoeur2, _myGame._positionCoeur2, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCoeur3, _myGame._positionCoeur3, Color.White);

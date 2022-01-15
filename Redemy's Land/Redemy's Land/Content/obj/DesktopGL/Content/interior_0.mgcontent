@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/interior.png</SourceFile>
-  <SourceTime>2022-01-14T14:28:14.6323934+01:00</SourceTime>
+  <SourceTime>2022-01-15T16:54:33.2267395+01:00</SourceTime>
   <DestFile>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/bin/DesktopGL/Content/interior_0.xnb</DestFile>
-  <DestTime>2022-01-14T14:28:27.4066164+01:00</DestTime>
+  <DestTime>2022-01-15T16:56:20.9043349+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T18:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

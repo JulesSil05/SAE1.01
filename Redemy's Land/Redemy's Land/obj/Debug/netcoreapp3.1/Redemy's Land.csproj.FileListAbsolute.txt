@@ -212,3 +212,10 @@ C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Deb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\coffre_ferme.xnb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\coffre_ouvert.xnb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\key.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\fond_grotte.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\fondGrotte.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\blue_apple.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\red_apple.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\case1ramasseBlue.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\plante.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\victoire.xnb
