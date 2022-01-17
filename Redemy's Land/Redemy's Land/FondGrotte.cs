@@ -92,6 +92,7 @@ namespace RedemysLand
             _myGame.SpriteBatch.Draw(_textureRedApple, _positionRedApple, Color.White);
             _myGame.SpriteBatch.Draw(_textureBlueApple, _positionBlueApple, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
+            _myGame.SpriteBatch.Draw(_myGame._bird, _myGame._BirdPosition);
             _myGame._tiledMapRenderer.Draw(_myGame._camera.GetViewMatrix());
             _myGame.SpriteBatch.End();
             _myGame.SpriteBatch.Begin();

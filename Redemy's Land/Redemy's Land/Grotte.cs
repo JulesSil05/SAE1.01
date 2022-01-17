@@ -82,6 +82,7 @@ namespace RedemysLand
             _myGame._tiledMapRenderer.Draw(_myGame._camera.GetViewMatrix());
             _myGame.SpriteBatch.Draw(_textureEmeraude, _positionEmeraude, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
+            _myGame.SpriteBatch.Draw(_myGame._bird, _myGame._BirdPosition);
             _myGame.SpriteBatch.End();
             _myGame.SpriteBatch.Begin();
             _myGame.SpriteBatch.Draw(_myGame._textureCoeur1, _myGame._positionCoeur1, Color.White);

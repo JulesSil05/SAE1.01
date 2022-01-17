@@ -55,6 +55,16 @@ namespace RedemysLand
         public TiledMap _tiledMap;
         public TiledMapRenderer _tiledMapRenderer;
         private int _vitessePerso = 80;
+        private int _vitesseIA = 40;
+
+        //IA
+        public Vector2 _IAposition;
+        public AnimatedSprite _IA;
+        
+        //IA Bird
+        public Vector2 _BirdPosition;
+        public AnimatedSprite _bird;
+        public Vector2 _dep;
 
         public OrthographicCamera _camera;
         public Vector2 _cameraPosition;
@@ -74,6 +84,7 @@ namespace RedemysLand
         public Vector2 _positionCase1, _positionCase2, _positionCase3, _positionCase4, _positionCase5, _positionCase6;
 
         public float _chronoGame;
+        public float _chronoIA;
         public SpriteFont _police;
         public Vector2 _positionTexte;
 
@@ -118,6 +129,7 @@ namespace RedemysLand
 
         public string AnimCharacter;
         public string animation = "face";
+        public string animationIA = "faceIA";
 
         public bool _emeraudeRamassee = false;
         public bool _argentRecu = false;
@@ -134,6 +146,9 @@ namespace RedemysLand
 
         public bool _planteRamassee = false;
         public bool _victoireClique = false;
+
+        Random rnd = new Random();
+        public int _direction;
 
         public Game1()
         {
@@ -175,6 +190,7 @@ namespace RedemysLand
             verifPanneau = false;
 
             _chronoGame = 500;
+            _chronoIA = -1;
 
             _positionEcranFin = new Vector2(-10000, -10000);
             _positionExitGameButton = new Vector2(-10000, -10000);
@@ -187,6 +203,13 @@ namespace RedemysLand
             
 
             GraphicsDevice.BlendState = BlendState.AlphaBlend;
+
+            //IA
+            _IAposition = new Vector2(700, 400);
+
+            //IA Bird
+            _BirdPosition = new Vector2(864, 886);
+            _dep = new Vector2(0, 0);
             
             //MENU
             _positionBackground = new Vector2(0, 0); //--jules--Position du fond
@@ -206,6 +229,7 @@ namespace RedemysLand
             _positionArbreShop = new Vector2(-10000, -10000);
             _positionChestKey = new Vector2(457, 783);
 
+
             base.Initialize();
 
             var viewportAdapter = new BoxingViewportAdapter(Window, GraphicsDevice, 600, 360);
@@ -216,6 +240,13 @@ namespace RedemysLand
            SpriteBatch = new SpriteBatch(GraphicsDevice);
             SpriteSheet spriteSheet = Content.Load<SpriteSheet>("motw.sf", new JsonContentLoader());
             _perso = new AnimatedSprite(spriteSheet);
+
+            SpriteSheet spriteSheetIA = Content.Load<SpriteSheet>("IA.sf", new JsonContentLoader());
+            _IA = new AnimatedSprite(spriteSheetIA);
+
+            SpriteSheet spriteSheetBird = Content.Load<SpriteSheet>("bird.sf", new JsonContentLoader());
+            _bird = new AnimatedSprite(spriteSheetBird);
+
             _tiledMap = Content.Load<TiledMap>("map");
             _texturePanneau = Content.Load<Texture2D>("panneau_porte_ferme");
             _tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _tiledMap);
@@ -325,6 +356,7 @@ namespace RedemysLand
 
             float deltaSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float walkSpeed = deltaSeconds * _vitessePerso;
+            float walkSpeedIA = deltaSeconds * _vitesseIA;
 
             _positionBackground.X = _positionBackground.X - 1; //--jules--Déplacement du fond 
             if (_positionBackground.X < -3064)
@@ -482,7 +514,80 @@ namespace RedemysLand
                         if (!IsCollision(tx, ty))
                             _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
                     }
-                }               
+                }
+
+                //IA
+                if (_chronoGame > 0)
+                {
+                    if (_chronoIA < 0)
+                    {
+                        animationIA = "faceIA";
+                        _direction = rnd.Next(0, 5);
+                        _chronoIA = 3;
+                    }
+
+                    _vitesseIA = 40;
+                    animationIA = "faceIA";
+                    if (_direction == 1)
+                    {
+                        ushort tx = (ushort)(_IAposition.X / _tiledMap.TileWidth);
+                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
+                        animationIA = "walkNorthIA";
+                        if (!IsCollision(tx, ty))
+                            _IAposition.Y -= walkSpeedIA; // _persoPosition vecteur position du sprite
+                    }
+                    if (_direction == 2)
+                    {
+                        ushort tx = (ushort)(_IAposition.X / _tiledMap.TileWidth);
+                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
+                        animationIA = "walkSouthIA";
+                        if (!IsCollision(tx, ty))
+                            _IAposition.Y += walkSpeedIA; // _persoPosition vecteur position du sprite
+                    }
+                    if (_direction == 3)
+                    {
+                        ushort tx = (ushort)(_IAposition.X / _tiledMap.TileWidth - 0.5);
+                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        animationIA = "walkWestIA";
+                        if (!IsCollision(tx, ty))
+                            _IAposition.X -= walkSpeedIA; // _persoPosition vecteur position du sprite
+                    }
+                    if (_direction == 4)
+                    {
+                        ushort tx = (ushort)(_IAposition.X / _tiledMap.TileWidth + 0.6);
+                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        animationIA = "walkEastIA";
+                        if (!IsCollision(tx, ty))
+                            _IAposition.X += walkSpeedIA; // _persoPosition vecteur position du sprite
+                    }
+                    
+                }
+                _chronoIA -= deltaSeconds;
+
+
+                //IA Bird
+                string animationBird = "walkEastBird";
+                if (_chronoGame > 0)
+                {
+                    KeyboardState keyboardState = Keyboard.GetState();
+
+                    if (keyboardState.IsKeyDown(Keys.Z))                    
+                        animationBird = "walkNorthBird";
+                    
+                    if (keyboardState.IsKeyDown(Keys.S))
+                        animationBird = "walkSouthBird";
+                    
+                    if (keyboardState.IsKeyDown(Keys.Q))                    
+                        animationBird = "walkWestBird";
+                    
+                    if (keyboardState.IsKeyDown(Keys.D))                    
+                        animationBird = "walkEastBird";
+                    
+                }
+                _dep.X = (_persoPosition.X - _BirdPosition.X) * 3;
+                _dep.Y = (_persoPosition.Y - _BirdPosition.Y) * 3;
+                _BirdPosition += _dep * deltaSeconds;
+                
 
                 MoveCamera(gameTime);
                 _camera.LookAt(_cameraPosition);
@@ -707,7 +812,11 @@ namespace RedemysLand
                 }
 
                 _perso.Play(animation);
+                _IA.Play(animationIA);
+                _bird.Play(animationBird);
                 _perso.Update(deltaSeconds);
+                _IA.Update(deltaSeconds);
+                _bird.Update(deltaSeconds);
                 _tiledMapRenderer.Update(gameTime);
 
                 Rectangle rReset = new Rectangle((int)_positionExitGameButton.X, (int)_positionExitGameButton.Y, _textureExitGameButton.Width, _textureExitGameButton.Height); //--jules--HitBox bouton fermer
@@ -716,9 +825,7 @@ namespace RedemysLand
                     _clickButton.Play();
                     Exit();
                 }
-                Console.WriteLine("Personage Position Position : " + _persoPosition.X + "," + _persoPosition.Y);
-
-                
+                Console.WriteLine("Personage Position Position : " + _persoPosition.X + "," + _persoPosition.Y);                
                 //GAME=============================================================
 
             }
@@ -739,9 +846,12 @@ namespace RedemysLand
             SpriteBatch.Draw(_textureCoffre, _positionCoffre, Color.White);
             SpriteBatch.Draw(_texturetjd4, _positiontjd4, Color.White);
             SpriteBatch.Draw(_textureDialoguePnj, _positionDialoguePnj, Color.White);
+            SpriteBatch.Draw(_IA, _IAposition);
             SpriteBatch.Draw(_perso, _persoPosition);
+            SpriteBatch.Draw(_bird, _BirdPosition);
             _tiledMapRenderer.Draw(_camera.GetViewMatrix());
             SpriteBatch.End();
+
             SpriteBatch.Begin();
             SpriteBatch.Draw(_textureVictoire, _positionVictoire, Color.White);
             SpriteBatch.Draw(_textureCoeur1, _positionCoeur1, Color.White);

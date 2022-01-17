@@ -46,7 +46,9 @@ namespace RedemysLand
             _myGame.SpriteBatch.Draw(_myGame._textureChestKey, _myGame._positionChestKey, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCoffre, _myGame._positionCoffre, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureChestKey, _myGame._positionChestKey, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._IA, _myGame._IAposition);
             _myGame.SpriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
+            _myGame.SpriteBatch.Draw(_myGame._bird, _myGame._BirdPosition);
             _myGame._tiledMapRenderer.Draw(_myGame._camera.GetViewMatrix());
             _myGame.SpriteBatch.Draw(_myGame._texturetjd4, _myGame._positiontjd4, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureDialoguePnj, _myGame._positionDialoguePnj, Color.White);

@@ -52,6 +52,7 @@
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/reset_button.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/setting_button.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/small_house.tmx</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/spritesheet.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/start_button.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/tall_house.tmx</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/tjd4.png</File>
@@ -62,6 +63,7 @@
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/yes.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

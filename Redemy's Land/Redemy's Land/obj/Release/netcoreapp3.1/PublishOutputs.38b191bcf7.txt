@@ -42,6 +42,7 @@ C:\Users\jules\Desktop\Content/interior_1.xnb
 C:\Users\jules\Desktop\Content/key.xnb
 C:\Users\jules\Desktop\Content/logo.xnb
 C:\Users\jules\Desktop\Content/map.xnb
+C:\Users\jules\Desktop\Content/messageGrotte.xnb
 C:\Users\jules\Desktop\Content/money_bag.xnb
 C:\Users\jules\Desktop\Content/motw.xnb
 C:\Users\jules\Desktop\Content/No.xnb
@@ -57,7 +58,9 @@ C:\Users\jules\Desktop\Content/tall_house.xnb
 C:\Users\jules\Desktop\Content/texte_intro.xnb
 C:\Users\jules\Desktop\Content/tilset_0.xnb
 C:\Users\jules\Desktop\Content/tjd4.xnb
+C:\Users\jules\Desktop\Content/toucheConcocter.xnb
 C:\Users\jules\Desktop\Content/toucheE.xnb
+C:\Users\jules\Desktop\Content/toucheEchange.xnb
 C:\Users\jules\Desktop\Content/victoire.xnb
 C:\Users\jules\Desktop\Content/yes.xnb
 C:\Users\jules\Desktop\Content\motw.sf

@@ -1,0 +1,29 @@
+{
+  "textureAtlas": {
+    "texture": "spritesheet.png",
+    "regionWidth": 16,
+    "regionHeight": 16
+  },
+  "cycles": {
+    "walkNorthBird": {
+      "frames": [276,277,278,279],
+      "isLooping": false,
+      "frameDuration": 0.1
+    },
+    "walkSouthBird": {
+      "frames": [260,261,262,263],
+      "isLooping": false,
+      "frameDuration": 0.1
+    },
+    "walkWestBird": {
+      "frames": [228,229,230,231],
+      "isLooping": false,
+      "frameDuration": 0.1
+    },
+    "walkEastBird": {
+      "frames": [244,245,246,247],
+      "isLooping": false,
+      "frameDuration": 0.1
+    }
+  }
+}
