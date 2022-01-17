@@ -219,3 +219,6 @@ C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Deb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\case1ramasseBlue.xnb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\plante.xnb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\victoire.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\toucheE.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\toucheConcocter.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\messageGrotte.xnb

@@ -40,6 +40,7 @@ namespace RedemysLand
             var transformMatrix = _myGame._camera.GetViewMatrix();
 
             _myGame.SpriteBatch.Begin(transformMatrix: transformMatrix);
+            _myGame.SpriteBatch.Draw(_myGame._textureBoutonConcocter, _myGame._positionBoutonConcocter, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureChestKey, _myGame._positionChestKey, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCoffre, _myGame._positionCoffre, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureChestKey, _myGame._positionChestKey, Color.White);

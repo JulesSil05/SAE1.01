@@ -19,6 +19,10 @@ namespace RedemysLand
     {
         private Texture2D _textureRedApple, _textureBlueApple;
         private Vector2 _positionRedApple, _positionBlueApple;
+
+        private Texture2D _textureTexte;
+        private Vector2 _positionTexte;
+
         private Game1 _myGame; // pour récupérer le jeu en cours
 
 
@@ -30,9 +34,11 @@ namespace RedemysLand
         {
             _positionRedApple = new Vector2(100, 100);
             _positionBlueApple = new Vector2(140, 100);
+            _positionTexte = new Vector2(155, 35);
 
             _textureRedApple = Content.Load<Texture2D>("red_apple");
             _textureBlueApple = Content.Load<Texture2D>("blue_apple");
+            _textureTexte = Content.Load<Texture2D>("messageGrotte");
             base.Initialize();
         }
         public override void LoadContent()
@@ -82,6 +88,7 @@ namespace RedemysLand
             var transformMatrix = _myGame._camera.GetViewMatrix();
 
             _myGame.SpriteBatch.Begin(transformMatrix: transformMatrix);
+            _myGame.SpriteBatch.Draw(_textureTexte, _positionTexte, Color.White);
             _myGame.SpriteBatch.Draw(_textureRedApple, _positionRedApple, Color.White);
             _myGame.SpriteBatch.Draw(_textureBlueApple, _positionBlueApple, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._perso, _myGame._persoPosition);
