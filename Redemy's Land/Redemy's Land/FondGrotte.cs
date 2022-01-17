@@ -113,7 +113,6 @@ namespace RedemysLand
             _myGame.SpriteBatch.Draw(_myGame._textureEcranFin, _myGame._positionEcranFin, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureExitGameButton, _myGame._positionExitGameButton, Color.White);
             _myGame.SpriteBatch.End();
-
         }
     }
 }

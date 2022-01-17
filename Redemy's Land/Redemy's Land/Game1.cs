@@ -98,6 +98,9 @@ namespace RedemysLand
         public Texture2D _textureBoutonE;
         public Vector2 _positionBoutonE;
 
+        public Texture2D _textureBoutonEchange;
+        public Vector2 _positionBoutonEchange;
+
         public Texture2D _textureBoutonConcocter;
         public Vector2 _positionBoutonConcocter;
 
@@ -192,6 +195,7 @@ namespace RedemysLand
             _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
             _positionBoutonE = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
             _positionBoutonConcocter = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
+            _positionBoutonEchange = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
             _positionCloseButton = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
             _positionOngletMenuQuitter = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
             _positionOui = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
@@ -239,6 +243,7 @@ namespace RedemysLand
             _textureExitGameButton = Content.Load<Texture2D>("reset_button");
             _textureBoutonE = Content.Load<Texture2D>("toucheE");
             _textureBoutonConcocter = Content.Load<Texture2D>("toucheConcocter");
+            _textureBoutonEchange = Content.Load<Texture2D>("toucheEchange");
             _textureVictoire = Content.Load<Texture2D>("victoire");
             _textureMoneyBag = Content.Load<Texture2D>("money_bag");
 
@@ -556,12 +561,22 @@ namespace RedemysLand
 
 
                 //emeraude
-                if (_persoPosition.X >= 1174 && _persoPosition.X <= 1191 && _persoPosition.Y >= 1084 && _persoPosition.Y <= 1122 && _emeraudeRamassee == true && _argentRecu == false)
+                if (_argentRecu == true)
+                {
+                    _positionDialoguePnj = new Vector2(-10000, -10000);
+                    _positionBoutonE = new Vector2(-10000, -10000);
+                }
+
+                else if (_persoPosition.X >= 1174 && _persoPosition.X <= 1191 && _persoPosition.Y >= 1084 && _persoPosition.Y <= 1122 && _emeraudeRamassee == true && _argentRecu == false && _keyboardState.IsKeyDown(Keys.E))
                 {
                     _argentRecu = true;
-                    _valeurPorteMonnaie = _valeurPorteMonnaie + 100;
-                    
+                    _valeurPorteMonnaie = _valeurPorteMonnaie + 100;                    
                     _positionDialoguePnj = new Vector2(-10000, -10000);
+                }
+
+                else if (_persoPosition.X >= 1174 && _persoPosition.X <= 1191 && _persoPosition.Y >= 1084 && _persoPosition.Y <= 1122 && _emeraudeRamassee == true && _argentRecu == false)
+                {
+                    _positionBoutonE = new Vector2(1184, 1073);
                 }
 
                 else if (_persoPosition.X >= 1174 && _persoPosition.X <= 1191 && _persoPosition.Y >= 1084 && _persoPosition.Y <= 1122 && _argentRecu == false)
@@ -577,7 +592,10 @@ namespace RedemysLand
                 else
                 {
                     _positionDialoguePnj = new Vector2(-10000, -10000);
+                    _positionBoutonE = new Vector2(-10000, -10000);
                 }
+
+
 
                 //clé coffre
                 if (_cleCoffreRamasse == true)
@@ -603,7 +621,7 @@ namespace RedemysLand
                 //coffre
                 if (_cleMaisonRamasse == true)
                 {
-                    _positionBoutonE = new Vector2(-10000, -10000);
+                    _positionBoutonEchange = new Vector2(-10000, -10000);
                     _textureCase6 = Content.Load<Texture2D>("case6ramasse");
                     _textureCoffre = Content.Load<Texture2D>("coffre_ouvert");
                 }
@@ -616,12 +634,12 @@ namespace RedemysLand
 
                 else if (_persoPosition.X >= 944 && _persoPosition.X <= 970 && _persoPosition.Y >= 1284 && _persoPosition.Y <= 1311 && _cleCoffreRamasse == true)
                 {
-                    _positionBoutonE = new Vector2(960, 1279);
+                    _positionBoutonEchange = new Vector2(960, 1279);
                 }               
 
                 else
                 {
-                    _positionBoutonE = new Vector2(-10000, -10000);
+                    _positionBoutonEchange = new Vector2(-10000, -10000);
                     _textureCoffre = Content.Load<Texture2D>("coffre_ferme");
                     _textureCase6 = Content.Load<Texture2D>("case6");
                 }
@@ -714,9 +732,10 @@ namespace RedemysLand
             // TODO: Add your drawing code here
             var transformMatrix = _camera.GetViewMatrix();
             SpriteBatch.Begin(transformMatrix: transformMatrix);
-            SpriteBatch.Draw(_textureChestKey, _positionChestKey, Color.White);
             SpriteBatch.Draw(_textureBoutonE, _positionBoutonE, Color.White);
+            SpriteBatch.Draw(_textureChestKey, _positionChestKey, Color.White);
             SpriteBatch.Draw(_textureBoutonConcocter, _positionBoutonConcocter, Color.White);
+            SpriteBatch.Draw(_textureBoutonEchange, _positionBoutonEchange, Color.White);
             SpriteBatch.Draw(_textureCoffre, _positionCoffre, Color.White);
             SpriteBatch.Draw(_texturetjd4, _positiontjd4, Color.White);
             SpriteBatch.Draw(_textureDialoguePnj, _positionDialoguePnj, Color.White);
