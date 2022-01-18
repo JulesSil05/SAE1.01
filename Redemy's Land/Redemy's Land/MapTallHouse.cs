@@ -31,6 +31,12 @@ namespace RedemysLand
             base.LoadContent();
         }
 
+        public override void Initialize()
+        {
+            _myGame._vitesseIA = 0;
+            base.Initialize();
+        }
+
         public override void Update(GameTime gameTime)
         {
             if (_myGame._persoPosition.Y >= 220)

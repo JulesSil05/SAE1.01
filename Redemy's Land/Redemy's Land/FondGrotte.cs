@@ -30,12 +30,13 @@ namespace RedemysLand
         {
             _myGame = game;
         }
+
         public override void Initialize()
         {
             _positionRedApple = new Vector2(100, 100);
             _positionBlueApple = new Vector2(140, 100);
             _positionTexte = new Vector2(155, 35);
-
+            _myGame._vitesseIA = 0;
             _textureRedApple = Content.Load<Texture2D>("red_apple");
             _textureBlueApple = Content.Load<Texture2D>("blue_apple");
             _textureTexte = Content.Load<Texture2D>("messageGrotte");

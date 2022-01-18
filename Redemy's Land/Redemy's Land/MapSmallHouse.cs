@@ -25,6 +25,12 @@ namespace RedemysLand
         {
             _myGame = game;
         }
+
+        public override void Initialize()
+        {
+            _myGame._vitesseIA = 0;
+            base.Initialize();
+        }
         public override void LoadContent()
         {
             _myGame._tiledMap = Content.Load<TiledMap>("small_house");

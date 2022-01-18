@@ -32,6 +32,7 @@
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/coffre_ouvert.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/color_tab.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/dialogue_émeraude.png</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/ecran mauvais ingredient.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/ecran_fin.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/emeraude.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/exit_button.png</File>
@@ -55,6 +56,7 @@
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/spritesheet.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/start_button.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/tall_house.tmx</File>
+    <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/texteZombie.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/tjd4.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/toucheConcocter.png</File>
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/toucheE.png</File>
@@ -63,6 +65,8 @@
     <File>C:/Users/jules/Desktop/Remedy's land/SAE1.01/Redemy's Land/Redemy's Land/Content/yes.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

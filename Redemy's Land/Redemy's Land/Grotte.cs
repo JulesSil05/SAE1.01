@@ -29,7 +29,7 @@ namespace RedemysLand
         public override void Initialize()
         {
             _positionEmeraude = new Vector2(126,742);
-            
+            _myGame._vitesseIA = 0;
             _textureEmeraude = Content.Load<Texture2D>("emeraude");
             base.Initialize();
         }

@@ -26,9 +26,11 @@ namespace RedemysLand
         {
             _myGame = game;
         }
+        
         public override void Initialize()
         {
             _positionColorTab = new Vector2(-10000, -10000);
+            _myGame._vitesseIA = 0;
             base.Initialize();
         }
         public override void LoadContent()

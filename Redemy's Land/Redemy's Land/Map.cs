@@ -31,7 +31,7 @@ namespace RedemysLand
         }
         public override void Update(GameTime gameTime)
         {
-
+            _myGame._vitesseIA = 40;
         }
 
         public override void Draw(GameTime gameTime)
@@ -52,6 +52,7 @@ namespace RedemysLand
             _myGame._tiledMapRenderer.Draw(_myGame._camera.GetViewMatrix());
             _myGame.SpriteBatch.Draw(_myGame._texturetjd4, _myGame._positiontjd4, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureDialoguePnj, _myGame._positionDialoguePnj, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureDialogueZombie, _myGame._positionDialogueZombie, Color.White);
             _myGame.SpriteBatch.End();
             _myGame.SpriteBatch.Begin();
             _myGame.SpriteBatch.Draw(_myGame._textureVictoire, _myGame._positionVictoire, Color.White);

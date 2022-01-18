@@ -330,6 +330,18 @@
 /processorParam:TextureFormat=Color
 /build:dialogue_émeraude.png
 
+#begin ecran mauvais ingredient.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:ecran mauvais ingredient.png
+
 #begin ecran_fin.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -570,6 +582,18 @@
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
 /build:tall_house.tmx
+
+#begin texteZombie.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:texteZombie.png
 
 #begin tjd4.png
 /importer:TextureImporter
