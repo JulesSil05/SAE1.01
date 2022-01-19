@@ -1,26 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Sprites;
-using MonoGame.Extended.Content;
-using MonoGame.Extended.Serialization;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
-using MonoGame.Extended;
-using MonoGame.Extended.ViewportAdapters;
 using System;
 using MonoGame.Extended.Screens;
-using MonoGame.Extended.Screens.Transitions;
-using System.Threading;
 
 namespace RedemysLand
-{    
+{
     public class MapBedroom : GameScreen
     {
         public Vector2 _positionColorTab;
         public Texture2D _textureColorTab;
 
-        private Game1 _myGame; // pour récupérer le jeu en cours
+        private Game1 _myGame;
 
         public MapBedroom(Game1 game) : base(game)
         {
@@ -30,7 +23,7 @@ namespace RedemysLand
         public override void Initialize()
         {
             _positionColorTab = new Vector2(-10000, -10000);
-            _myGame._vitesseIA = 0;
+            
             base.Initialize();
         }
         public override void LoadContent()
@@ -43,6 +36,7 @@ namespace RedemysLand
         }
         public override void Update(GameTime gameTime)
         {
+            _myGame._vitesseIA = 0;
             ushort x = (ushort)(_myGame._persoPosition.X / _myGame._tiledMap.TileWidth);
             ushort y = (ushort)(_myGame._persoPosition.Y / _myGame._tiledMap.TileHeight);
             if ((_myGame.mapLayer.GetTile(x, y).GlobalIdentifier) == 1525)

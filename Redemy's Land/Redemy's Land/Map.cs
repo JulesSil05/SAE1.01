@@ -1,22 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Sprites;
-using MonoGame.Extended.Content;
-using MonoGame.Extended.Serialization;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
-using MonoGame.Extended;
-using MonoGame.Extended.ViewportAdapters;
 using System;
 using MonoGame.Extended.Screens;
-using MonoGame.Extended.Screens.Transitions;
 
 namespace RedemysLand
 {
     public class Map : GameScreen
     {
-        private Game1 _myGame; // pour récupérer le jeu en cours
+        private Game1 _myGame; 
 
         public Map(Game1 game) : base(game)
         {
@@ -32,6 +25,19 @@ namespace RedemysLand
         public override void Update(GameTime gameTime)
         {
             _myGame._vitesseIA = 40;
+
+            if (_myGame._persoPosition.X >= _myGame._IAposition.X - 32 && _myGame._persoPosition.X <= _myGame._IAposition.X + 32 && _myGame._persoPosition.Y >= _myGame._IAposition.Y - 32 && _myGame._persoPosition.Y <= _myGame._IAposition.Y + 32)
+            {
+                _myGame._vitesseIA = 0;
+                _myGame.animationIA = "faceIA";
+                _myGame._positionDialogueZombie = new Vector2(_myGame._IAposition.X - 30, _myGame._IAposition.Y - 90);
+                
+            }
+
+            else
+            {
+                _myGame._positionDialogueZombie = new Vector2(-10000, -10000);
+            }
         }
 
         public override void Draw(GameTime gameTime)
@@ -56,6 +62,7 @@ namespace RedemysLand
             _myGame.SpriteBatch.End();
             _myGame.SpriteBatch.Begin();
             _myGame.SpriteBatch.Draw(_myGame._textureVictoire, _myGame._positionVictoire, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureEcranMauvais, _myGame._positionEcranMauvais, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCoeur1, _myGame._positionCoeur1, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCoeur2, _myGame._positionCoeur2, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureCoeur3, _myGame._positionCoeur3, Color.White);
@@ -73,9 +80,10 @@ namespace RedemysLand
             _myGame.SpriteBatch.DrawString(_myGame._police, "" + Math.Round(_myGame._chronoGame) + "", _myGame._positionTexte, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._texturePanneau, _myGame._positionPanneau, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureEcranFin, _myGame._positionEcranFin, Color.White);
-            _myGame.SpriteBatch.Draw(_myGame._textureExitGameButton, _myGame._positionExitGameButton, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureFioleShop, _myGame._positionFioleShop, Color.White);
             _myGame.SpriteBatch.Draw(_myGame._textureArbreShop, _myGame._positionArbreShop, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureExitGameButton, _myGame._positionExitGameButton, Color.White);
+            _myGame.SpriteBatch.Draw(_myGame._textureExitButton, _myGame._positionExitButton, Color.White); 
             _myGame.SpriteBatch.End();
 
         }

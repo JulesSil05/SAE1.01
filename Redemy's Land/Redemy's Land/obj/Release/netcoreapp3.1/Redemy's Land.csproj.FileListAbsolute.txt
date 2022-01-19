@@ -172,3 +172,6 @@ C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Rel
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Release\netcoreapp3.1\Content\spritesheet.xnb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Release\netcoreapp3.1\Content\bird.sf
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Release\netcoreapp3.1\Content\IA.sf
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Release\netcoreapp3.1\Content\case2arbre.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Release\netcoreapp3.1\Content\case3arbre.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Release\netcoreapp3.1\Content\texteZombie.xnb

@@ -1,24 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Sprites;
-using MonoGame.Extended.Content;
-using MonoGame.Extended.Serialization;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
-using MonoGame.Extended;
-using MonoGame.Extended.ViewportAdapters;
 using System;
 using MonoGame.Extended.Screens;
-using MonoGame.Extended.Screens.Transitions;
-using System.Threading;
 
 namespace RedemysLand
 {
     public class MapTallHouse : GameScreen
     {
-        private Game1 _myGame; // pour récupérer le jeu en cours
-
+        private Game1 _myGame; 
         public MapTallHouse(Game1 game) : base(game)
         {
             _myGame = game;
@@ -33,12 +24,13 @@ namespace RedemysLand
 
         public override void Initialize()
         {
-            _myGame._vitesseIA = 0;
+            
             base.Initialize();
         }
 
         public override void Update(GameTime gameTime)
         {
+            _myGame._vitesseIA = 0;
             if (_myGame._persoPosition.Y >= 220)
             {
                 _myGame.LoadScreenMap();

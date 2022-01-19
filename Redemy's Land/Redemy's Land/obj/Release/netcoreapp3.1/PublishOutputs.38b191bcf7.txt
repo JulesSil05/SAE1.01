@@ -12,8 +12,10 @@ C:\Users\jules\Desktop\Content/case1.xnb
 C:\Users\jules\Desktop\Content/case1ramasse.xnb
 C:\Users\jules\Desktop\Content/case1ramasseBlue.xnb
 C:\Users\jules\Desktop\Content/case2.xnb
+C:\Users\jules\Desktop\Content/case2arbre.xnb
 C:\Users\jules\Desktop\Content/case2ramasse.xnb
 C:\Users\jules\Desktop\Content/case3.xnb
+C:\Users\jules\Desktop\Content/case3arbre.xnb
 C:\Users\jules\Desktop\Content/case3ramasse.xnb
 C:\Users\jules\Desktop\Content/case4.xnb
 C:\Users\jules\Desktop\Content/case4ramasse.xnb
@@ -30,6 +32,7 @@ C:\Users\jules\Desktop\Content/coffre_ferme.xnb
 C:\Users\jules\Desktop\Content/coffre_ouvert.xnb
 C:\Users\jules\Desktop\Content/color_tab.xnb
 C:\Users\jules\Desktop\Content/dialogue_émeraude.xnb
+C:\Users\jules\Desktop\Content/ecran mauvais ingredient.xnb
 C:\Users\jules\Desktop\Content/ecran_fin.xnb
 C:\Users\jules\Desktop\Content/emeraude.xnb
 C:\Users\jules\Desktop\Content/exit_button.xnb
@@ -53,8 +56,10 @@ C:\Users\jules\Desktop\Content/red_apple.xnb
 C:\Users\jules\Desktop\Content/reset_button.xnb
 C:\Users\jules\Desktop\Content/setting_button.xnb
 C:\Users\jules\Desktop\Content/small_house.xnb
+C:\Users\jules\Desktop\Content/spritesheet.xnb
 C:\Users\jules\Desktop\Content/start_button.xnb
 C:\Users\jules\Desktop\Content/tall_house.xnb
+C:\Users\jules\Desktop\Content/texteZombie.xnb
 C:\Users\jules\Desktop\Content/texte_intro.xnb
 C:\Users\jules\Desktop\Content/tilset_0.xnb
 C:\Users\jules\Desktop\Content/tjd4.xnb
@@ -63,6 +68,8 @@ C:\Users\jules\Desktop\Content/toucheE.xnb
 C:\Users\jules\Desktop\Content/toucheEchange.xnb
 C:\Users\jules\Desktop\Content/victoire.xnb
 C:\Users\jules\Desktop\Content/yes.xnb
+C:\Users\jules\Desktop\Content\bird.sf
+C:\Users\jules\Desktop\Content\IA.sf
 C:\Users\jules\Desktop\Content\motw.sf
 C:\Users\jules\Desktop\Content\panneau_porte_ferme.png
 C:\Users\jules\Desktop\Redemy's Land.dll

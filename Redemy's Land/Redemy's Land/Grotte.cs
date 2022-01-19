@@ -1,17 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Sprites;
-using MonoGame.Extended.Content;
-using MonoGame.Extended.Serialization;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
-using MonoGame.Extended;
-using MonoGame.Extended.ViewportAdapters;
 using System;
 using MonoGame.Extended.Screens;
-using MonoGame.Extended.Screens.Transitions;
-using System.Threading;
 
 namespace RedemysLand
 {
@@ -20,7 +13,7 @@ namespace RedemysLand
         private Texture2D _textureEmeraude;
         private Vector2 _positionEmeraude;
         
-        private Game1 _myGame; // pour récupérer le jeu en cours
+        private Game1 _myGame; 
 
         public Grotte(Game1 game) : base(game)
         {
@@ -29,7 +22,7 @@ namespace RedemysLand
         public override void Initialize()
         {
             _positionEmeraude = new Vector2(126,742);
-            _myGame._vitesseIA = 0;
+            
             _textureEmeraude = Content.Load<Texture2D>("emeraude");
             base.Initialize();
         }
@@ -44,6 +37,7 @@ namespace RedemysLand
 
         public override void Update(GameTime gameTime)
         {
+            _myGame._vitesseIA = 0;
             if (_myGame._persoPosition.Y >= 1100)
             {
                 _myGame.LoadScreenMap();

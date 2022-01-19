@@ -1,17 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Sprites;
-using MonoGame.Extended.Content;
-using MonoGame.Extended.Serialization;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
-using MonoGame.Extended;
-using MonoGame.Extended.ViewportAdapters;
 using System;
 using MonoGame.Extended.Screens;
-using MonoGame.Extended.Screens.Transitions;
-using System.Threading;
 
 namespace RedemysLand
 {
@@ -23,7 +16,7 @@ namespace RedemysLand
         private Texture2D _textureTexte;
         private Vector2 _positionTexte;
 
-        private Game1 _myGame; // pour récupérer le jeu en cours
+        private Game1 _myGame; 
 
 
         public FondGrotte(Game1 game) : base(game)
@@ -36,7 +29,7 @@ namespace RedemysLand
             _positionRedApple = new Vector2(100, 100);
             _positionBlueApple = new Vector2(140, 100);
             _positionTexte = new Vector2(155, 35);
-            _myGame._vitesseIA = 0;
+            
             _textureRedApple = Content.Load<Texture2D>("red_apple");
             _textureBlueApple = Content.Load<Texture2D>("blue_apple");
             _textureTexte = Content.Load<Texture2D>("messageGrotte");
@@ -51,6 +44,7 @@ namespace RedemysLand
         }
         public override void Update(GameTime gameTime)
         {
+            _myGame._vitesseIA = 0;
             if (_myGame._pommeRougeRamassee == true)
             {
                 _positionRedApple = new Vector2(-10000, -10000);

@@ -228,3 +228,5 @@ C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Deb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\spritesheet.xnb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\ecran mauvais ingredient.xnb
 C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\texteZombie.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\case2arbre.xnb
+C:\Users\jules\Desktop\Remedy's land\SAE1.01\Redemy's Land\Redemy's Land\bin\Debug\netcoreapp3.1\Content\case3arbre.xnb

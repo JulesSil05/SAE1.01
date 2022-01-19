@@ -22,32 +22,32 @@ namespace RedemysLand
 
         public KeyboardState keyboardState = Keyboard.GetState();
 
-        private Texture2D _textureBackground; //--jules--Definition texture de fond
-        private Vector2 _positionBackground; //--jules--Definition position de fond
-        private Texture2D _textureLogo; //--jules--Definition texture du logo
-        private Vector2 _positionLogo; //--jules--Definition position du logo
+        private Texture2D _textureBackground; 
+        private Vector2 _positionBackground; 
+        private Texture2D _textureLogo; 
+        private Vector2 _positionLogo; 
 
-        private Texture2D _textureStartButton; //--jules--Definition texture du bouton de démarrage
-        private Vector2 _positionStartButton; //--jules--Definition position du bouton de démarrage
+        private Texture2D _textureStartButton; 
+        private Vector2 _positionStartButton; 
         private bool _playButtonClicked;
-        private Texture2D _textureExitButton; //--jules--Definition texture du bouton de sortie
-        private Vector2 _positionExitButton; //--jules--Definition position du bouton de sortie
+        public Texture2D _textureExitButton; 
+        public Vector2 _positionExitButton; 
 
-        private Texture2D _textureOngletMenuQuitter; //--jules--Definition texture onglet menu
-        private Vector2 _positionOngletMenuQuitter; //--jules--Definition position onglet menu
+        private Texture2D _textureOngletMenuQuitter; 
+        private Vector2 _positionOngletMenuQuitter; 
 
-        private Texture2D _textureCloseButton; //--jules--Definition texture bouton fermer
-        private Vector2 _positionCloseButton; //--jules--Definition position bouton fermer
+        private Texture2D _textureCloseButton; 
+        private Vector2 _positionCloseButton; 
 
-        private Texture2D _textureOui; //--jules--Definition texture bouton fermer
-        private Vector2 _positionOui; //--jules--Definition position bouton fermer
-        private Texture2D _textureNon; //--jules--Definition texture bouton fermer
-        private Vector2 _positionNon; //--jules--Definition position bouton fermer
+        private Texture2D _textureOui; 
+        private Vector2 _positionOui; 
+        private Texture2D _textureNon; 
+        private Vector2 _positionNon; 
 
-        private Song _backMusic; //--jules--Définition de la musique de fond pour le menu
-        private SoundEffect _clickButton; //--jules--Définition du son pour le clique sur un boutton du menu
+        private Song _backMusic;
+        private SoundEffect _clickButton;
 
-        public MouseState _mouseState; //--jules--Définition etat de la souris
+        public MouseState _mouseState;
 
         //GAME
         public Vector2 _persoPosition;
@@ -167,10 +167,9 @@ namespace RedemysLand
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            _graphics.PreferredBackBufferWidth = 1552; //--jules--Definition de la largeur de l'écran
-            _graphics.PreferredBackBufferHeight = 960; //--jules--Definition de la hauteur de l'écran
-            _graphics.ApplyChanges(); //--jules--Application des changements de taille
+            _graphics.PreferredBackBufferWidth = 1552; 
+            _graphics.PreferredBackBufferHeight = 960; 
+            _graphics.ApplyChanges(); 
 
             _persoPosition = new Vector2(864, 886);
             _cameraPosition = _persoPosition;
@@ -196,7 +195,7 @@ namespace RedemysLand
             verifPanneau = false;
 
             _chronoGame = 500;
-            _chronoIA = -1;
+
 
             _positionEcranFin = new Vector2(-10000, -10000);
             _positionExitGameButton = new Vector2(-10000, -10000);
@@ -213,23 +212,24 @@ namespace RedemysLand
 
             //IA
             _IAposition = new Vector2(700, 400);
+            _chronoIA = -1;
 
             //IA Bird
             _BirdPosition = new Vector2(864, 886);
-            _dep = new Vector2(0, 0);
+            _dep = new Vector2(0, 0); 
             
             //MENU
-            _positionBackground = new Vector2(0, 0); //--jules--Position du fond
-            _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo
-            _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
-            _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
-            _positionBoutonE = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
-            _positionBoutonConcocter = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
-            _positionBoutonEchange = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
-            _positionCloseButton = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
-            _positionOngletMenuQuitter = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
-            _positionOui = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
-            _positionNon = new Vector2(-10000, -10000); //--jules--Position du bouton fermer
+            _positionBackground = new Vector2(0, 0); 
+            _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); 
+            _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); 
+            _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); 
+            _positionBoutonE = new Vector2(-10000, -10000); 
+            _positionBoutonConcocter = new Vector2(-10000, -10000); 
+            _positionBoutonEchange = new Vector2(-10000, -10000); 
+            _positionCloseButton = new Vector2(-10000, -10000); 
+            _positionOngletMenuQuitter = new Vector2(-10000, -10000); 
+            _positionOui = new Vector2(-10000, -10000); 
+            _positionNon = new Vector2(-10000, -10000); 
             _playButtonClicked = false;
             _valeurPorteMonnaie = 0;
             _positionFioleShop = new Vector2(-10000, -10000);
@@ -298,18 +298,18 @@ namespace RedemysLand
             mapLayer = _tiledMap.GetLayer<TiledMapTileLayer>("contraintes");
 
             //MENU
-            _textureBackground = Content.Load<Texture2D>("background_menu"); //--jules--Chargement texture de fond
-            _textureLogo = Content.Load<Texture2D>("logo"); //--jules--Chargement texture du logo
-            _textureStartButton = Content.Load<Texture2D>("start_button"); //--jules--Chargement texture du bouton de démarrage
-            _textureExitButton = Content.Load<Texture2D>("exit_button"); //--jules--Chargement texture du bouton de sortie
-            _backMusic = Content.Load<Song>("back_music"); //--jules--Chargement du fichier audio de la musique de fond du menu
-            _clickButton = Content.Load<SoundEffect>("click_button"); //--jules--Chargement du fichier audio de la musique de fond du menu
-            MediaPlayer.Play(_backMusic); //--jules--Démarrage de la musique de fond
-            MediaPlayer.IsRepeating = true; //--jules--Répétition de la musique
-            _textureCloseButton = Content.Load<Texture2D>("close"); //--jules--Chargement du bouton fermer
-            _textureOngletMenuQuitter = Content.Load<Texture2D>("back_onglet_menu"); //--jules--Chargement du bouton fermer
-            _textureOui = Content.Load<Texture2D>("Yes"); //--jules--Chargement du bouton fermer
-            _textureNon = Content.Load<Texture2D>("No"); //--jules--Chargement du bouton fermer
+            _textureBackground = Content.Load<Texture2D>("background_menu");
+            _textureLogo = Content.Load<Texture2D>("logo");
+            _textureStartButton = Content.Load<Texture2D>("start_button"); 
+            _textureExitButton = Content.Load<Texture2D>("exit_button"); 
+            _backMusic = Content.Load<Song>("back_music");
+            _clickButton = Content.Load<SoundEffect>("click_button"); 
+            MediaPlayer.Play(_backMusic); 
+            MediaPlayer.IsRepeating = true; 
+            _textureCloseButton = Content.Load<Texture2D>("close");
+            _textureOngletMenuQuitter = Content.Load<Texture2D>("back_onglet_menu");
+            _textureOui = Content.Load<Texture2D>("Yes"); 
+            _textureNon = Content.Load<Texture2D>("No"); 
         }
 
         private void MoveCamera(GameTime gameTime)
@@ -368,72 +368,71 @@ namespace RedemysLand
             float walkSpeed = deltaSeconds * _vitessePerso;
             float walkSpeedIA = deltaSeconds * _vitesseIA;
 
-            _positionBackground.X = _positionBackground.X - 1; //--jules--Déplacement du fond 
+            _positionBackground.X = _positionBackground.X - 1; 
             if (_positionBackground.X < -3064)
                 _positionBackground.X = 0;
 
-            //--jules--Interception souris
+
             _mouseState = Mouse.GetState();
 
-            Rectangle rBouton = new Rectangle((int)_positionStartButton.X, (int)_positionStartButton.Y, _textureStartButton.Width, _textureStartButton.Height); //--jules--HitBox bouton play
-            Rectangle rBoutonQuitter = new Rectangle((int)_positionExitButton.X, (int)_positionExitButton.Y, _textureExitButton.Width, _textureExitButton.Height); //--jules--HitBox bouton quitter
+            Rectangle rBouton = new Rectangle((int)_positionStartButton.X, (int)_positionStartButton.Y, _textureStartButton.Width, _textureStartButton.Height);
+            Rectangle rBoutonQuitter = new Rectangle((int)_positionExitButton.X, (int)_positionExitButton.Y, _textureExitButton.Width, _textureExitButton.Height); 
 
-            Rectangle rBoutonClose = new Rectangle((int)_positionCloseButton.X, (int)_positionCloseButton.Y, _textureCloseButton.Width, _textureCloseButton.Height); //--jules--HitBox bouton fermer
-            if (rBouton.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed) //--jules--config bouton play
+            Rectangle rBoutonClose = new Rectangle((int)_positionCloseButton.X, (int)_positionCloseButton.Y, _textureCloseButton.Width, _textureCloseButton.Height); 
+            if (rBouton.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed) 
             {
                 _playButtonClicked = true;
                 _clickButton.Play();
 
-                _positionBackground = new Vector2(-10000, -10000); //--jules--Position du fond
-                _positionLogo = new Vector2(-10000, -10000); //--jules--Position du logo
-                _positionStartButton = new Vector2(-10000, -10000); //--jules--Position du bouton de démarrage
-                _positionExitButton = new Vector2(-10000, -10000); //--jules--Position du bouton de sortie
+                _positionBackground = new Vector2(-10000, -10000); 
+                _positionLogo = new Vector2(-10000, -10000);
+                _positionStartButton = new Vector2(-10000, -10000);
+                _positionExitButton = new Vector2(-10000, -10000); 
 
-                _positionCloseButton = new Vector2(980, 150); //--jules--Position du bouton fermer
-                _positionOngletMenuQuitter = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-                _positionOui = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-                _positionNon = new Vector2(10000, 10000); //--jules--Position du bouton fermer           
+                _positionCloseButton = new Vector2(980, 150); 
+                _positionOngletMenuQuitter = new Vector2(10000, 10000); 
+                _positionOui = new Vector2(10000, 10000); 
+                _positionNon = new Vector2(10000, 10000);          
             }
             
             
 
             else if (_mouseState.LeftButton == ButtonState.Pressed && _playButtonClicked != true)
             {
-                if (rBoutonQuitter.Contains(_mouseState.Position)) //--jules--config bouton quitter
+                if (rBoutonQuitter.Contains(_mouseState.Position)) 
                 {
-                    //Affichage du menu quitter
                     _clickButton.Play();
-                    _positionOngletMenuQuitter = new Vector2((_graphics.PreferredBackBufferWidth / 2) - 268, (_graphics.PreferredBackBufferHeight / 2) - 165); //--jules--Position du menu quitter
-                    _positionOui = new Vector2(600, 540); //--jules--Position du menu quitter
-                    _positionNon = new Vector2(840, 540); //--jules--Position du menu quitter
-                    _positionStartButton = new Vector2(10000, 10000); //--jules--Position du bouton de démarrage
-                    _positionExitButton = new Vector2(10000, 10000); //--jules--Position du bouton de sortie
-                    _positionLogo = new Vector2(10000, 10000); //--jules--Position du logo
+                    _positionOngletMenuQuitter = new Vector2((_graphics.PreferredBackBufferWidth / 2) - 268, (_graphics.PreferredBackBufferHeight / 2) - 165);
+                    _positionOui = new Vector2(600, 540);
+                    _positionNon = new Vector2(840, 540); 
+                    _positionStartButton = new Vector2(10000, 10000); 
+                    _positionExitButton = new Vector2(10000, 10000); 
+                    _positionLogo = new Vector2(10000, 10000); 
 
 
                 }
-                //Interaction avec le menu quitter
-                Rectangle rBoutonOui = new Rectangle((int)_positionOui.X, (int)_positionOui.Y, _textureOui.Width, _textureOui.Height); //--jules--HitBox bouton fermer
-                if (rBoutonOui.Contains(_mouseState.Position)) //--jules--config bouton fermer
+
+                Rectangle rBoutonOui = new Rectangle((int)_positionOui.X, (int)_positionOui.Y, _textureOui.Width, _textureOui.Height); 
+                if (rBoutonOui.Contains(_mouseState.Position)) 
                 {
                     Exit();
                 }
-                Rectangle rBoutonNon = new Rectangle((int)_positionNon.X, (int)_positionNon.Y, _textureNon.Width, _textureNon.Height); //--jules--HitBox bouton fermer
-                if (rBoutonNon.Contains(_mouseState.Position)) //--jules--config bouton fermer
+                Rectangle rBoutonNon = new Rectangle((int)_positionNon.X, (int)_positionNon.Y, _textureNon.Width, _textureNon.Height);
+                if (rBoutonNon.Contains(_mouseState.Position)) 
                 {
                     _clickButton.Play();
-                    _positionOngletMenuQuitter = new Vector2(10000, 10000); //--jules--Position onglet menu
-                    _positionCloseButton = new Vector2(10000, 10000); //--jules--Position du bouton fermer
-                    _positionOui = new Vector2(10000, 10000); //--jules--Position du menu quitter
-                    _positionNon = new Vector2(10000, 10000); //--jules--Position du menu quitter
-                    _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); //--jules--Position du bouton de démarrage
-                    _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); //--jules--Position du bouton de sortie
-                    _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200); //--jules--Position du logo                   
+                    _positionOngletMenuQuitter = new Vector2(10000, 10000); 
+                    _positionCloseButton = new Vector2(10000, 10000); 
+                    _positionOui = new Vector2(10000, 10000); 
+                    _positionNon = new Vector2(10000, 10000); 
+                    _positionStartButton = new Vector2((_graphics.PreferredBackBufferWidth - 1170), 600); 
+                    _positionExitButton = new Vector2((_graphics.PreferredBackBufferWidth - 600), 600); 
+                    _positionLogo = new Vector2(_graphics.PreferredBackBufferWidth - 1280, 200);                    
                 }
             }
 
             
-            else if (rBoutonClose.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed) //--jules--config bouton fermer
+            else if (rBoutonClose.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed)
             {
                 _clickButton.Play();
                 _positionTexteIntro = new Vector2(-10000, -10000);
@@ -452,36 +451,36 @@ namespace RedemysLand
                     if (keyboardState.IsKeyDown(Keys.Z))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); 
                         animation = "walkNorth";
                         if (!IsCollision(tx, ty))
                         {
-                            _persoPosition.Y -= walkSpeed; // _persoPosition vecteur position du sprite
+                            _persoPosition.Y -= walkSpeed; 
                         }
                     }
                     if (keyboardState.IsKeyDown(Keys.S))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2);
                         animation = "walkSouth";
                         if (!IsCollision(tx, ty))
-                            _persoPosition.Y += walkSpeed; // _persoPosition vecteur position du sprite
+                            _persoPosition.Y += walkSpeed; 
                     }
                     if (keyboardState.IsKeyDown(Keys.Q))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth - 0.5);
-                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); 
                         animation = "walkWest";
                         if (!IsCollision(tx, ty))
-                            _persoPosition.X -= walkSpeed; // _persoPosition vecteur position du sprite
+                            _persoPosition.X -= walkSpeed; 
                     }
                     if (keyboardState.IsKeyDown(Keys.D))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth + 0.6);
-                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); 
                         animation = "walkEast";
                         if (!IsCollision(tx, ty))
-                            _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
+                            _persoPosition.X += walkSpeed;
                     }
                 }
 
@@ -495,34 +494,34 @@ namespace RedemysLand
                     if (keyboardState.IsKeyDown(Keys.Z))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 0.2); 
                         animation = "walkNorthZombie";
                         if (!IsCollision(tx, ty))
-                            _persoPosition.Y -= walkSpeed; // _persoPosition vecteur position du sprite
+                            _persoPosition.Y -= walkSpeed; 
                     }
                     if (keyboardState.IsKeyDown(Keys.S))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth);
-                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1.2); 
                         animation = "walkSouthZombie";
                         if (!IsCollision(tx, ty))
-                            _persoPosition.Y += walkSpeed; // _persoPosition vecteur position du sprite
+                            _persoPosition.Y += walkSpeed; 
                     }
                     if (keyboardState.IsKeyDown(Keys.Q))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth - 0.5);
-                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); 
                         animation = "walkWestZombie";
                         if (!IsCollision(tx, ty))
-                            _persoPosition.X -= walkSpeed; // _persoPosition vecteur position du sprite
+                            _persoPosition.X -= walkSpeed; 
                     }
                     if (keyboardState.IsKeyDown(Keys.D))
                     {
                         ushort tx = (ushort)(_persoPosition.X / _tiledMap.TileWidth + 0.6);
-                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_persoPosition.Y / _tiledMap.TileHeight + 1); 
                         animation = "walkEastZombie";
                         if (!IsCollision(tx, ty))
-                            _persoPosition.X += walkSpeed; // _persoPosition vecteur position du sprite
+                            _persoPosition.X += walkSpeed; 
                     }
                 }
 
@@ -541,11 +540,11 @@ namespace RedemysLand
                     if (_direction == 1)
                     {
                         ushort tx = (ushort)(_IAposition.X / _tiledMap.TileWidth);
-                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 0.2); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 0.2); 
                         animationIA = "walkNorthIA";
                         if (!IsCollision(tx, ty))
                         {
-                            _IAposition.Y -= walkSpeedIA; // _persoPosition vecteur position du sprite
+                            _IAposition.Y -= walkSpeedIA; 
                         }
                         if (IsCollision(tx, ty))
                         {
@@ -555,11 +554,11 @@ namespace RedemysLand
                     if (_direction == 2)
                     {
                         ushort tx = (ushort)(_IAposition.X / _tiledMap.TileWidth);
-                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1.2); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1.2); 
                         animationIA = "walkSouthIA";
                         if (!IsCollision(tx, ty))
                         {
-                            _IAposition.Y += walkSpeedIA; // _persoPosition vecteur position du sprite
+                            _IAposition.Y += walkSpeedIA; 
                         }
                         if (IsCollision(tx, ty))
                         {
@@ -569,11 +568,11 @@ namespace RedemysLand
                     if (_direction == 3)
                     {
                         ushort tx = (ushort)(_IAposition.X / _tiledMap.TileWidth - 0.5);
-                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1); 
                         animationIA = "walkWestIA";
                         if (!IsCollision(tx, ty))
                         {
-                            _IAposition.X -= walkSpeedIA; // _persoPosition vecteur position du sprite
+                            _IAposition.X -= walkSpeedIA; 
                         }
                         if (IsCollision(tx, ty))
                         {
@@ -583,11 +582,11 @@ namespace RedemysLand
                     if (_direction == 4)
                     {
                         ushort tx = (ushort)(_IAposition.X / _tiledMap.TileWidth + 0.6);
-                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1); //la tuile au-dessus en y
+                        ushort ty = (ushort)(_IAposition.Y / _tiledMap.TileHeight + 1); 
                         animationIA = "walkEastIA";
                         if (!IsCollision(tx, ty))
                         {
-                            _IAposition.X += walkSpeedIA; // _persoPosition vecteur position du sprite
+                            _IAposition.X += walkSpeedIA; 
                         }
                         if (IsCollision(tx, ty))
                         {
@@ -629,8 +628,9 @@ namespace RedemysLand
                         animationBird = "walkEastBird";
                     
                 }
-                _dep.X = (_persoPosition.X - _BirdPosition.X) * 3;
-                _dep.Y = (_persoPosition.Y - _BirdPosition.Y) * 3;
+
+                _dep.X = ((_persoPosition.X - _BirdPosition.X) * 3) + 50;
+                _dep.Y = ((_persoPosition.Y - _BirdPosition.Y) * 3) - 50;
                 _BirdPosition += _dep * deltaSeconds;
                 
 
@@ -699,9 +699,16 @@ namespace RedemysLand
                 {
                     _positionEcranFin = new Vector2(0, 0);
                     _positionExitGameButton = new Vector2(630, 750);
+                    MediaPlayer.Stop();
                 }
 
-                if(_persoPosition.X >= 407 && _persoPosition.X <= 430 && _persoPosition.Y >= 1190 && _persoPosition.Y <= 1200)
+                Rectangle rBoutonQuitterJeu = new Rectangle((int)_positionExitGameButton.X, (int)_positionExitGameButton.Y, _textureExitGameButton.Width, _textureExitGameButton.Height); 
+                if (rBoutonQuitterJeu.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed)
+                {
+                    Exit();
+                }
+
+                if (_persoPosition.X >= 407 && _persoPosition.X <= 430 && _persoPosition.Y >= 1190 && _persoPosition.Y <= 1200)
                 {
                     _positiontjd4 = new Vector2(394, 1145);
                 }
@@ -746,8 +753,6 @@ namespace RedemysLand
                     _positionBoutonE = new Vector2(-10000, -10000);
                 }
 
-
-
                 //clé coffre
                 if (_cleCoffreRamasse == true)
                 {
@@ -765,9 +770,7 @@ namespace RedemysLand
                 {
                     _positionChestKey = new Vector2(457, 783);
                     _textureCase5 = Content.Load<Texture2D>("case5");
-                }
-
-                
+                }                
 
                 //coffre
                 if (_cleMaisonRamasse == true)
@@ -795,9 +798,9 @@ namespace RedemysLand
                     _textureCase6 = Content.Load<Texture2D>("case6");
                 }
 
-
                 //shop
-                Rectangle rShopFiole = new Rectangle((int)_positionFioleShop.X, (int)_positionFioleShop.Y, _textureFioleShop.Width, _textureFioleShop.Height); //--jules--HitBox bouton fermer
+                Rectangle rShopFiole = new Rectangle((int)_positionFioleShop.X, (int)_positionFioleShop.Y, _textureFioleShop.Width, _textureFioleShop.Height);
+                Rectangle rShopArbre = new Rectangle((int)_positionArbreShop.X, (int)_positionArbreShop.Y, _textureArbreShop.Width, _textureArbreShop.Height);
                 if (rShopFiole.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed && _valeurPorteMonnaie == 100)
                 {
                     _achatFiole = true;
@@ -808,10 +811,10 @@ namespace RedemysLand
                     _achatMagasin = true;
                     _clickButton.Play();
                 }
-                Rectangle rShopArbre = new Rectangle((int)_positionArbreShop.X, (int)_positionArbreShop.Y, _textureArbreShop.Width, _textureArbreShop.Height); //--jules--HitBox bouton fermer
-                if (rShopArbre.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed && _valeurPorteMonnaie == 100)
+                else if (rShopArbre.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed && _valeurPorteMonnaie == 100)
                 {
                     _achatArbre = true;
+                    _textureCase3 = Content.Load<Texture2D>("case3arbre");
                     _valeurPorteMonnaie = _valeurPorteMonnaie - 100;
                     _positionFioleShop = new Vector2(-10000, -10000);
                     _positionArbreShop = new Vector2(-10000, -10000);
@@ -819,13 +822,16 @@ namespace RedemysLand
                     _clickButton.Play();
                 }
 
-                if (_achatMagasin == true)
+                if (_achatMagasin == true && _achatFiole == true)
                 {
                     _textureCase3 = Content.Load<Texture2D>("case3ramasse");
                 }
+                else if (_achatMagasin == true && _achatArbre == true)
+                {
+                    _textureCase3 = Content.Load<Texture2D>("case3arbre");
+                }
 
                 //victoire
-                
                 if (_persoPosition.X >= 1089 && _persoPosition.X <= 1105 && _persoPosition.Y >= 1092 && _persoPosition.Y <= 1108 && _planteRamassee == true && _pommeBleuRamassee == true && _achatFiole == true && _keyboardState.IsKeyDown(Keys.E))
                 {                    
                     _victoireClique = true;
@@ -846,28 +852,41 @@ namespace RedemysLand
                     _positionMoneyBag = new Vector2(-10000, -10000);
                     _positionPorteMonnaie = new Vector2(-10000, -10000);
                     _vitessePerso = 0;
+                    MediaPlayer.Stop();
                 }
+                else if (_persoPosition.X >= 1089 && _persoPosition.X <= 1105 && _persoPosition.Y >= 1092 && _persoPosition.Y <= 1108 && !(_planteRamassee == true && _pommeBleuRamassee == true && _achatFiole == true) && _keyboardState.IsKeyDown(Keys.E))
+                {
+                    _positionEcranMauvais = new Vector2(0, 0);
+                    _positionCoeur1 = new Vector2(-10000, -10000);
+                    _positionCoeur2 = new Vector2(-10000, -10000);
+                    _positionCoeur3 = new Vector2(-10000, -10000);
+                    _positionCoeur4 = new Vector2(-10000, -10000);
+                    _positionCoeur5 = new Vector2(-10000, -10000);
+                    _positionCase1 = new Vector2(-10000, -10000);
+                    _positionCase2 = new Vector2(-10000, -10000);
+                    _positionCase3 = new Vector2(-10000, -10000);
+                    _positionCase4 = new Vector2(-10000, -10000);
+                    _positionCase5 = new Vector2(-10000, -10000);
+                    _positionCase6 = new Vector2(-10000, -10000);
+                    _positionTexte = new Vector2(-10000, -10000);
+                    _positionMoneyBag = new Vector2(-10000, -10000);
+                    _positionPorteMonnaie = new Vector2(-10000, -10000);
+                    MediaPlayer.Stop();
+                }
+                    
+                else if (_persoPosition.X >= 1089 && _persoPosition.X <= 1105 && _persoPosition.Y >= 1092 && _persoPosition.Y <= 1108)
+                {
+                    _positionBoutonConcocter = new Vector2(1087, 1062);
+                }
+                else
+                    _positionBoutonConcocter = new Vector2(-10000, -10000);
 
-                Rectangle rBoutonQuitterGame = new Rectangle((int)_positionExitButton.X, (int)_positionExitButton.Y, _textureExitButton.Width, _textureExitButton.Height); //--jules--HitBox bouton fermer
-                if (rBoutonQuitterGame.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed) //--jules--config bouton fermer
+
+                Rectangle rBoutonQuitterGame = new Rectangle((int)_positionExitButton.X, (int)_positionExitButton.Y, _textureExitButton.Width, _textureExitButton.Height); 
+                if (rBoutonQuitterGame.Contains(_mouseState.Position) && _mouseState.LeftButton == ButtonState.Pressed) 
                 {
                     Exit();
                 }
-
-                else if (_victoireClique == true && !(_planteRamassee == true && _pommeBleuRamassee == true && _achatFiole == true))
-                    _positionEcranMauvais = new Vector2(0, 0);
-
-                else if (_persoPosition.X >= 1089 && _persoPosition.X <= 1105 && _persoPosition.Y >= 1092 && _persoPosition.Y <= 1108 && _planteRamassee == true && _pommeBleuRamassee == true && _achatFiole == true)
-                {
-                    _positionBoutonConcocter = new Vector2(1087, 1062);
-                }                         
-
-                else if (_victoireClique == false)
-                {
-                    _positionBoutonConcocter = new Vector2(-10000, -10000);
-                }
-
-                
 
                 _perso.Play(animation);
                 _IA.Play(animationIA);
@@ -929,14 +948,14 @@ namespace RedemysLand
             SpriteBatch.Draw(_textureExitGameButton, _positionExitGameButton, Color.White);
 
             //MENU
-            SpriteBatch.Draw(_textureBackground, _positionBackground, Color.White); //--jules--affichage fond du menu
-            SpriteBatch.Draw(_textureLogo, _positionLogo, Color.White); //--jules--affichage du logo
-            SpriteBatch.Draw(_textureStartButton, _positionStartButton, Color.White); //--jules--affichage du bouton jouer
-            SpriteBatch.Draw(_textureExitButton, _positionExitButton, Color.White); //--jules--affichage du bouton quitter
-            SpriteBatch.Draw(_textureCloseButton, _positionCloseButton, Color.White); //--jules--affichage du bouton fermer 
-            SpriteBatch.Draw(_textureOngletMenuQuitter, _positionOngletMenuQuitter, Color.White); //--jules--affichage du bouton fermer 
-            SpriteBatch.Draw(_textureOui, _positionOui, Color.White); //--jules--affichage du bouton fermer 
-            SpriteBatch.Draw(_textureNon, _positionNon, Color.White); //--jules--affichage du bouton fermer 
+            SpriteBatch.Draw(_textureBackground, _positionBackground, Color.White);
+            SpriteBatch.Draw(_textureLogo, _positionLogo, Color.White); 
+            SpriteBatch.Draw(_textureStartButton, _positionStartButton, Color.White); 
+            SpriteBatch.Draw(_textureExitButton, _positionExitButton, Color.White); 
+            SpriteBatch.Draw(_textureCloseButton, _positionCloseButton, Color.White);  
+            SpriteBatch.Draw(_textureOngletMenuQuitter, _positionOngletMenuQuitter, Color.White); 
+            SpriteBatch.Draw(_textureOui, _positionOui, Color.White); 
+            SpriteBatch.Draw(_textureNon, _positionNon, Color.White); 
             SpriteBatch.Draw(_texturePanneau, _positionPanneau, Color.White);
             SpriteBatch.Draw(_textureFioleShop, _positionFioleShop, Color.White);
             SpriteBatch.Draw(_textureArbreShop, _positionArbreShop, Color.White);
